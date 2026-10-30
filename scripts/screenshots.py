@@ -52,10 +52,6 @@ async def shoot(ask: bool) -> list[Path]:
             await page.get_by_role("tab", name=label).click()
             await page.wait_for_timeout(2500)
 
-        async def scroll_to(text: str) -> None:
-            await page.get_by_text(text, exact=False).first.evaluate("e => e.scrollIntoView({block: 'start'})")
-            await page.wait_for_timeout(1000)
-
         await snap("01_feed.png")
         await tab("Хаб")
         await snap("02_hub_board.png")
@@ -66,8 +62,19 @@ async def shoot(ask: bool) -> list[Path]:
         await snap("04_deadlines.png")
         await tab("Трассировка")
         await snap("05_trace.png")
-        await scroll_to("5. MCP-вызовы")
-        await snap("05b_trace_mcp.png")
+        # блок «MCP-вызовы → Verify» целиком (правая колонка трассировки)
+        await page.set_viewport_size({"width": 1700, "height": 2800})
+        await page.wait_for_timeout(2000)
+        col = page.locator('[data-testid="stColumn"]').filter(has_text="5. MCP-вызовы").last
+        cbox = await col.bounding_box()
+        hbox = await page.get_by_text("5. MCP-вызовы", exact=False).first.bounding_box()
+        vbox = await page.get_by_text("Время по узлам графа", exact=False).first.bounding_box()
+        path = OUT / "05b_trace_mcp.png"
+        await page.screenshot(path=str(path), clip={"x": cbox["x"] - 8, "y": hbox["y"] - 12,
+                                                    "width": cbox["width"] + 16, "height": vbox["y"] - hbox["y"] + 4})
+        saved.append(path)
+        print("  ✓", path.relative_to(ROOT))
+        await page.set_viewport_size({"width": 1700, "height": 950})
         if ask:
             await tab("Спросить")
             box = page.get_by_placeholder("Ваш вопрос по переписке…")

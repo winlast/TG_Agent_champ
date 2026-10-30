@@ -18,7 +18,7 @@ llm:
   think: false              # thinking-режим Qwen3 выключен ради скорости
   num_ctx: 8192
   timeout_s: 900
-  keep_alive: 30m
+  keep_alive: 5m            # через 5 мин простоя модель выгружается из памяти (бережёт RAM для WSL и VS Code)
 
 embeddings:
   backend: ollama           # ollama | hash (hash — только для тестов)

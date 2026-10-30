@@ -53,7 +53,7 @@ class LLMCfg(BaseModel):
     think: bool = False
     num_ctx: int = 8192
     timeout_s: float = 900
-    keep_alive: str = "30m"
+    keep_alive: str = "5m"
 
 
 class EmbeddingsCfg(BaseModel):

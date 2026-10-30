@@ -63,7 +63,7 @@ class OllamaLLM(LLMClient):
     name = "ollama"
 
     def __init__(self, model: str, host: str = "http://localhost:11434", temperature: float = 0.0,
-                 think: bool = False, num_ctx: int = 8192, timeout_s: float = 900, keep_alive: str = "30m"):
+                 think: bool = False, num_ctx: int = 8192, timeout_s: float = 900, keep_alive: str = "5m"):
         import ollama
 
         self.model = model

@@ -23,7 +23,7 @@ class Embedder(ABC):
 
 
 class OllamaEmbedder(Embedder):
-    def __init__(self, model: str = "bge-m3", host: str = "http://localhost:11434", keep_alive: str = "30m"):
+    def __init__(self, model: str = "bge-m3", host: str = "http://localhost:11434", keep_alive: str = "5m"):
         import ollama
 
         self.model = model
