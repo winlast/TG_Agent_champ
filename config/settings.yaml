@@ -5,9 +5,10 @@
 timezone: Europe/Moscow
 log_level: INFO
 
+# Два независимых рабочих пространства (SQLite + Chroma в каждом), чтобы демо не смешивалось с реальными чатами:
 paths:
-  db: data/runtime/study_radar.sqlite
-  chroma: data/runtime/chroma
+  demo: data/runtime/demo   # make simulate, make ui (по умолчанию)
+  live: data/runtime/live   # make bot, make index
 
 llm:
   backend: ollama           # ollama | fake (fake — детерминированные правила, ТОЛЬКО для тестов)

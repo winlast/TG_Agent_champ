@@ -39,8 +39,10 @@ class Subject(BaseModel):
 
 
 class PathsCfg(BaseModel):
-    db: str = "data/runtime/study_radar.sqlite"
-    chroma: str = "data/runtime/chroma"
+    demo: str = "data/runtime/demo"      # рабочее пространство make simulate (демо-сценарий)
+    live: str = "data/runtime/live"      # рабочее пространство бота и загруженных экспортов
+    db: str | None = None                # явные пути (тесты, eval) перекрывают рабочее пространство
+    chroma: str | None = None
 
 
 class LLMCfg(BaseModel):
@@ -115,6 +117,7 @@ class TelegramCfg(BaseModel):
 class Settings(BaseModel):
     timezone: str = "Europe/Moscow"
     log_level: str = "INFO"
+    workspace: str = "demo"   # demo — make simulate; live — бот и реальные экспорты
     paths: PathsCfg = PathsCfg()
     llm: LLMCfg = LLMCfg()
     embeddings: EmbeddingsCfg = EmbeddingsCfg()
@@ -140,13 +143,16 @@ class Settings(BaseModel):
         p = Path(rel)
         return p if p.is_absolute() else ROOT / p
 
+    def workspace_dir(self) -> Path:
+        return self.path(self.paths.live if self.workspace == "live" else self.paths.demo)
+
     @property
     def db_path(self) -> Path:
-        return self.path(self.paths.db)
+        return self.path(self.paths.db) if self.paths.db else self.workspace_dir() / "study_radar.sqlite"
 
     @property
     def chroma_path(self) -> Path:
-        return self.path(self.paths.chroma)
+        return self.path(self.paths.chroma) if self.paths.chroma else self.workspace_dir() / "chroma"
 
     def is_trusted(self, author: str | None) -> bool:
         a = (author or "").lower()

@@ -61,19 +61,26 @@ CAT_COLORS = {
 }
 
 
-def run_backend() -> str:
+WS_LABELS = {"demo": "Демо-сценарий (make simulate)", "live": "Telegram-бот (make bot)"}
+
+
+def run_backend(workspace: str) -> str:
     from study_radar.storage.db import Database
 
     base = load_settings()
+    base.workspace = workspace
+    if not base.db_path.exists():
+        return ""
     return Database(base.db_path, base.tz).get_meta("run_backend") or ""
 
 
 @st.cache_resource
-def services(backend: str):
+def services(workspace: str, backend: str):
     """Сервисы под тот бэкенд, которым сделан показываемый прогон (эмбеддинги в индексе должны совпадать)."""
     from study_radar.services import Services
 
     cfg = load_settings()
+    cfg.workspace = workspace
     if backend == "fake":
         cfg.llm.backend, cfg.embeddings.backend = "fake", "hash"
     elif backend.startswith("ollama:"):
@@ -81,7 +88,10 @@ def services(backend: str):
     return Services(cfg)
 
 
-sv = services(run_backend())
+with st.sidebar:
+    workspace = st.radio("Данные", list(WS_LABELS), format_func=WS_LABELS.get,
+                         index=1 if st.query_params.get("ws") == "live" else 0)
+sv = services(workspace, run_backend(workspace))
 s = sv.s
 db = sv.db
 
@@ -122,6 +132,8 @@ def jload(v):
 
 # ---------------------------------------------------------------------------------------------- шапка
 backend = db.get_meta("run_backend") or f"ollama:{s.llm.model}"
+if workspace == "live":
+    st.caption("Данные режима бота: реальные чаты-источники и хаб в Telegram.")
 st.markdown("## 📡 StudyRadar — ИИ-агент для учебных Telegram-чатов")
 if backend == "fake":
     st.warning("Данные получены в режиме **FakeLLM** (правила для проверки кода, НЕ модель). "
@@ -147,7 +159,9 @@ with st.sidebar:
     st.divider()
     st.markdown("### Демо")
     status = db.get_meta("run_status")
-    if status == "running":
+    if workspace == "live":
+        st.caption("Демо-сценарий проигрывается в пространстве «Демо»; здесь — данные бота.")
+    elif status == "running":
         total = int(db.get_meta("run_total") or 0)
         st.info(f"Идёт прогон сценария… обработано постов: {len(decisions)}")
         st.button("🔄 Обновить")

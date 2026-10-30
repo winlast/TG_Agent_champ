@@ -24,8 +24,9 @@ FAKE_WARNING = ("[bold yellow]⚠ Режим FakeLLM + HashEmbedder: это пр
                 "Не используйте эти результаты в презентации.[/]")
 
 
-def _settings(fake: bool = False, act_mode: str | None = None) -> Settings:
+def _settings(fake: bool = False, act_mode: str | None = None, workspace: str = "demo") -> Settings:
     s = load_settings()
+    s.workspace = workspace
     setup_logging(s.log_level)
     if fake:
         s.llm.backend = "fake"
@@ -61,6 +62,7 @@ def doctor(deep: bool = typer.Option(False, help="Дополнительно з�
     from study_radar.doctor import run_doctor
 
     s = load_settings()
+    s.workspace = "live"   # хаб, заданный через /sethub, хранится в рабочем пространстве бота
     setup_logging("WARNING")
     ok = asyncio.run(run_doctor(s, console, deep=deep))
     raise typer.Exit(0 if ok else 1)
@@ -69,9 +71,10 @@ def doctor(deep: bool = typer.Option(False, help="Дополнительно з�
 # ---------------------------------------------------------------------------------------------- index
 @app.command()
 def index(export: list[Path] = typer.Option(..., "--export", "-e", help="Telegram JSON-экспорт (result.json)."),
-          fake: bool = typer.Option(False, help="Hash-эмбеддинги вместо Ollama (только для проверки).")) -> None:
+          fake: bool = typer.Option(False, help="Hash-эмбеддинги вместо Ollama (только для проверки)."),
+          workspace: str = typer.Option("live", help="live — для бота (по умолчанию), demo — к демо-данным.")) -> None:
     """Модуль 1: загрузить историю из JSON-экспорта в SQLite и векторную БД (идемпотентно)."""
-    s = _settings(fake)
+    s = _settings(fake, workspace=workspace)
     if not fake:
         _check_ollama_or_exit(s)
     from study_radar.services import Services
@@ -194,24 +197,26 @@ def reset_runtime(s: Settings, sv=None) -> None:
 
 
 @app.command()
-def reset(yes: bool = typer.Option(False, "--yes", "-y")) -> None:
+def reset(yes: bool = typer.Option(False, "--yes", "-y"),
+          workspace: str = typer.Option("all", help="demo | live | all")) -> None:
     """Очистить рабочие данные агента (сообщения, решения, дедлайны, хаб)."""
     s = _settings()
-    if not yes and not typer.confirm("Удалить все рабочие данные агента?"):
+    targets = ["demo", "live"] if workspace == "all" else [workspace]
+    if not yes and not typer.confirm(f"Удалить рабочие данные ({', '.join(targets)})?"):
         raise typer.Exit()
-    db_path = s.db_path
-    shutil.rmtree(s.chroma_path, ignore_errors=True)
-    for p in (db_path, Path(str(db_path) + "-wal"), Path(str(db_path) + "-shm")):
-        p.unlink(missing_ok=True)
-    console.print("[green]✓ Рабочие данные удалены[/]")
+    for ws in targets:
+        s.workspace = ws
+        shutil.rmtree(s.workspace_dir(), ignore_errors=True)
+    console.print(f"[green]✓ Рабочие данные удалены: {', '.join(targets)}[/]")
 
 
 # ---------------------------------------------------------------------------------------------- ask / board
 @app.command()
 def ask(question: str = typer.Argument(..., help="Вопрос по переписке."),
+        live: bool = typer.Option(False, "--live", help="Искать в данных бота, а не демо-сценария."),
         fake: bool = typer.Option(False, help="FakeLLM (только проверка кода).")) -> None:
     """Модуль 2: ответ на вопрос по переписке (RAG) со ссылками на источники."""
-    s = _settings(fake)
+    s = _settings(fake, workspace="live" if live else "demo")
     if not fake:
         _check_ollama_or_exit(s)
     from study_radar.agent.ask import Asker
@@ -224,11 +229,11 @@ def ask(question: str = typer.Argument(..., help="Вопрос по перепи
 
 
 @app.command()
-def board() -> None:
+def board(live: bool = typer.Option(False, "--live", help="Доска бота, а не демо-сценария.")) -> None:
     """Показать текущую доску дедлайнов."""
     import re
 
-    s = _settings()
+    s = _settings(workspace="live" if live else "demo")
     from study_radar.services import Services
 
     pages = Services(s).db.board_pages()
@@ -267,7 +272,7 @@ def eval_cmd(labels: Path = typer.Option(ROOT / "data/eval/labeled.jsonl", help=
 @app.command()
 def bot() -> None:
     """Режим бота: слушать чаты-источники в Telegram и вести хаб."""
-    s = _settings()
+    s = _settings(workspace="live")
     if not s.telegram.token:
         console.print("[red]✗ TELEGRAM_BOT_TOKEN не задан.[/] Создайте бота у @BotFather и впишите токен в .env "
                       "(инструкция — README, раздел «Режим бота»).")

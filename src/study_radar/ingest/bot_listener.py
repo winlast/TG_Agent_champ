@@ -144,6 +144,7 @@ async def run_bot(settings: Settings) -> None:
     me = await bot.get_me()
     sv = Services(settings, "bot", bot=bot)
     db = sv.db
+    db.set_clock(None)   # живой режим — реальное время (часы сценария только в simulate)
     queue: asyncio.Queue[tuple[Post, str]] = asyncio.Queue()
     buffer = LiveBuffer(settings, queue)
     state: dict[str, Any] = {"rt": None}
