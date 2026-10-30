@@ -86,6 +86,9 @@ class AgentCfg(BaseModel):
     act_mode: str = "llm"
     max_attempts: int = 2
     max_steps: int = 4
+    act_tools: list[str] = Field(default_factory=lambda: [
+        "forward_to_topic", "create_deadline", "update_deadline", "close_deadline", "list_deadlines",
+        "refresh_deadlines_board", "flag_for_review"])
 
 
 class DedupCfg(BaseModel):

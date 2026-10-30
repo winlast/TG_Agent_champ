@@ -21,7 +21,8 @@ from study_radar.agent.dates import fmt_due
 from study_radar.config import ROOT, load_settings
 from study_radar.models import CATEGORY_EMOJI, CATEGORY_RU, Category
 
-st.set_page_config(page_title="StudyRadar", page_icon="📡", layout="wide")
+st.set_page_config(page_title="StudyRadar", page_icon="📡", layout="wide",
+                   initial_sidebar_state="collapsed" if st.query_params.get("shot") else "expanded")
 
 CSS = """
 <style>
@@ -60,14 +61,27 @@ CAT_COLORS = {
 }
 
 
+def run_backend() -> str:
+    from study_radar.storage.db import Database
+
+    base = load_settings()
+    return Database(base.db_path, base.tz).get_meta("run_backend") or ""
+
+
 @st.cache_resource
-def services():
+def services(backend: str):
+    """Сервисы под тот бэкенд, которым сделан показываемый прогон (эмбеддинги в индексе должны совпадать)."""
     from study_radar.services import Services
 
-    return Services(load_settings())
+    cfg = load_settings()
+    if backend == "fake":
+        cfg.llm.backend, cfg.embeddings.backend = "fake", "hash"
+    elif backend.startswith("ollama:"):
+        cfg.llm.model = backend.split(":", 1)[1]
+    return Services(cfg)
 
 
-sv = services()
+sv = services(run_backend())
 s = sv.s
 db = sv.db
 

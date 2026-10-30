@@ -290,7 +290,7 @@ class AgentRuntime:
         else:
             messages: list[dict[str, Any]] = [{"role": "system", "content": self.act_system},
                                               {"role": "user", "content": user}]
-            specs = self.toolbox.ollama_specs()
+            specs = [t for t in self.toolbox.ollama_specs() if t["function"]["name"] in self.s.agent.act_tools]
             missing = plan
             for attempt in range(1, self.s.agent.max_attempts + 1):
                 for _step in range(self.s.agent.max_steps):

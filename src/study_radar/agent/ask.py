@@ -65,7 +65,7 @@ class Asker:
             dt = datetime.fromisoformat(h.meta["date"])
             sources.append({
                 "kind": "message", "text": h.text[:500], "link": h.meta.get("link"), "date": h.meta["date"],
-                "label": f"{h.meta['chat_title']}, {fmt_due(dt)} {dt:%H:%M}, {h.meta['author']}",
+                "label": f"{h.meta['chat_title']}, {fmt_due(dt)}, {h.meta['author']}",
                 "header": f"Сообщение · чат «{h.meta['chat_title']}»"
                           + (f", топик «{h.meta['topic']}»" if h.meta.get('topic') else "")
                           + f" · {human_date(dt)} · {h.meta['author']}",

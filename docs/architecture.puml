@@ -1,0 +1,90 @@
+@startuml StudyRadar
+' Схема в стиле схемы преподавателя: белый фон, roundcorner 14, Segoe UI, пунктирные рамки,
+' цветовая легенда и нумерация блоков как в рекомендованном стеке (1, 2а, 3а, 4–9).
+' Рендер: make diagram  (или java -jar plantuml.jar -tpng docs/architecture.puml)
+!pragma layout smetana
+skinparam backgroundColor white
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam roundcorner 14
+skinparam shadowing false
+skinparam dpi 140
+skinparam ArrowColor #4d4d4d
+skinparam ArrowFontSize 11
+skinparam rectangle {
+  BorderColor #6f6f6f
+  FontColor #1f1f1f
+}
+skinparam database {
+  BorderColor #6f6f6f
+}
+skinparam actorStyle awesome
+skinparam TitleFontSize 18
+
+title StudyRadar — архитектура (вариант А: индексация + RAG + MCP)
+
+rectangle "Источники" as SRC #line.dashed {
+  rectangle "Telegram Bot API (aiogram)\nmessage / edited_message\nиз 5 учебных чатов" as TG #F6D9C0
+  rectangle "JSON-экспорт чатов\n(история до добавления бота)" as EXP #DCE9F7
+}
+
+rectangle "Модуль 1. Индексация" as M1 #line.dashed {
+  rectangle "1. Тексты предметной области\nпарсинг экспорта / Bot API, очистка,\nсклейка «очередей» преподавателя" as B1 #DCE9F7
+  rectangle "2а. Эмбеддинги\nbge-m3 через Ollama" as B2 #DCE9F7
+}
+
+rectangle "Хранилища" as ST #line.dashed {
+  database "3а. Векторная БД Chroma\nmessages · subjects · deadlines" as B3 #CFE8E3
+  database "SQLite\nсообщения, решения агента,\nдедлайны + история, топики хаба" as SQL #CFE8E3
+}
+
+rectangle "Онлайн-ветка: автономный агент (LangGraph)" as AG #line.dashed {
+  rectangle "Префильтр\nэмбеддинги + маркеры дат,\nщедрый порог" as PF #F6D9C0
+  rectangle "5. Оркестратор LangGraph\ningest → prefilter → build_context →\nclassify → act → verify → log" as B5 #F6D9C0
+  rectangle "4. Retriever (гибрид)\nChroma + BM25 → RRF\nreply, соседи, похожие, дедлайны" as B4 #F6D9C0
+  rectangle "6. Обогащённый запрос\nинструкции + few-shot + контекст\n+ JSON Schema ответа" as B6 #F6D9C0
+}
+
+rectangle "7. Локальная LLM\nOllama · qwen3:8b (16 ГБ) / qwen3:4b (8 ГБ)\nthink=False · temperature=0\nструктурированный JSON · tool calling" as B7 #D9EAD3
+
+rectangle "Модуль 3. Инструменты через MCP" as M3 #line.dashed {
+  rectangle "8. MCP-клиент\nlangchain-mcp-adapters\n(официальный MCP SDK)" as B8 #E4DAF2
+  rectangle "9. MCP-сервер StudyRadar (FastMCP, stdio)\nforward_to_topic · create_deadline · update_deadline\nclose_deadline · list_deadlines · search_messages\nget_message_context · refresh_deadlines_board\nflag_for_review" as B9 #E4DAF2
+}
+
+rectangle "Чат-хаб (супергруппа с темами)\nФизика · Электротехника · Модели данных …\n«Дедлайны» — закреп-доска (editMessageText)\n«На проверку» · «Журнал агента»" as HUB #F6D9C0
+
+rectangle "Модуль 2. RAG-пайплайн\n/ask · Streamlit «Спросить» · CLI\nвопрос → гибридный поиск → промпт →\nLLM → ответ со ссылками [n]" as M2 #F6D9C0
+
+actor "Студент" as U
+
+TG --> B1
+EXP --> B1
+B1 --> B2
+B2 --> B3 : индекс
+B1 --> SQL
+B1 --> PF : пост
+PF --> B5
+B5 --> B4 : build_context
+B4 --> B3
+B4 --> B6
+B6 --> B7 : classify → JSON
+B5 --> B8 : act
+B8 <--> B7 : tool calling
+B8 --> B9 : JSON-RPC (stdio)
+B9 --> SQL
+B9 --> HUB : пересылка, пометки,\nдоска
+U --> M2 : вопрос
+M2 --> B4
+M2 --> B7
+HUB --> U : важное по предметам
+
+legend right
+  <b>Цвета</b>
+  |<#DCE9F7>     | индексация (Модуль 1) |
+  |<#CFE8E3>     | хранилища |
+  |<#F6D9C0>     | онлайн-ветка |
+  |<#D9EAD3>     | LLM |
+  |<#E4DAF2>     | MCP (Модуль 3) |
+endlegend
+@enduml

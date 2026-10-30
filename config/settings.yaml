@@ -46,6 +46,10 @@ agent:
   act_mode: llm             # llm — LLM сама вызывает MCP-инструменты; deterministic — только исполнитель
   max_attempts: 2           # после 2 неудачных попыток — детерминированный фолбэк
   max_steps: 4
+  # инструменты MCP, которые LLM видит на шаге act (search_messages и get_message_context
+  # доступны агенту, но не нужны для действия — так промпт короче и быстрее на CPU)
+  act_tools: [forward_to_topic, create_deadline, update_deadline, close_deadline, list_deadlines,
+              refresh_deadlines_board, flag_for_review]
 
 dedup:
   title_similarity: 0.82
