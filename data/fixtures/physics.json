@@ -1,0 +1,571 @@
+{
+ "name": "Физика ИУ5-31Б",
+ "type": "private_supergroup",
+ "id": 1000000002,
+ "messages": [
+  {
+   "id": 1,
+   "type": "message",
+   "date": "2026-10-19T10:00:00",
+   "date_unixtime": "1792393200",
+   "from": "Орлов Д. В.",
+   "from_id": "user561405096",
+   "text": "Здравствуйте! Это чат для вопросов по физике. Задачник и методички — в ЭУ.",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Здравствуйте! Это чат для вопросов по физике. Задачник и методички — в ЭУ."
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "type": "message",
+   "date": "2026-10-19T10:02:00",
+   "date_unixtime": "1792393320",
+   "from": "Кирилл Лебедев",
+   "from_id": "user375322108",
+   "text": "здравствуйте!",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "здравствуйте!"
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "type": "message",
+   "date": "2026-10-19T10:03:00",
+   "date_unixtime": "1792393380",
+   "from": "Аня Соколова",
+   "from_id": "user466317201",
+   "text": "спасибо",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "спасибо"
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "type": "message",
+   "date": "2026-10-20T11:00:00",
+   "date_unixtime": "1792483200",
+   "from": "Орлов Д. В.",
+   "from_id": "user561405096",
+   "text": "ДЗ №2: задачи 2.1–2.12, сдать до четверга 22.10 в 23:59",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "ДЗ №2: задачи 2.1–2.12, сдать до четверга 22.10 в 23:59"
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "type": "message",
+   "date": "2026-10-20T11:05:00",
+   "date_unixtime": "1792483500",
+   "from": "Денис Ким",
+   "from_id": "user958535212",
+   "text": "это жесть",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "это жесть"
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "type": "message",
+   "date": "2026-10-20T11:30:00",
+   "date_unixtime": "1792485000",
+   "from": "Олег Петров",
+   "from_id": "user120250599",
+   "text": "физос опять завалит",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "физос опять завалит"
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "type": "message",
+   "date": "2026-10-20T18:00:00",
+   "date_unixtime": "1792508400",
+   "from": "Кирилл Лебедев",
+   "from_id": "user375322108",
+   "text": "кто-нибудь понял задачу 2.5 про блоки?",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "кто-нибудь понял задачу 2.5 про блоки?"
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "type": "message",
+   "date": "2026-10-20T18:20:00",
+   "date_unixtime": "1792509600",
+   "from": "Аня Соколова",
+   "from_id": "user466317201",
+   "text": "там через второй закон Ньютона",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "там через второй закон Ньютона"
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "type": "message",
+   "date": "2026-10-21T16:00:00",
+   "date_unixtime": "1792587600",
+   "from": "Аня Соколова",
+   "from_id": "user466317201",
+   "text": "А в ДЗ №2 задачу 2.7 нужно с рисунком?",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "А в ДЗ №2 задачу 2.7 нужно с рисунком?"
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "type": "message",
+   "date": "2026-10-21T16:30:00",
+   "date_unixtime": "1792589400",
+   "from": "Орлов Д. В.",
+   "from_id": "user561405096",
+   "reply_to_message_id": 9,
+   "text": "Да, рисунок обязателен",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Да, рисунок обязателен"
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "type": "message",
+   "date": "2026-10-21T21:00:00",
+   "date_unixtime": "1792605600",
+   "from": "Кирилл Лебедев",
+   "from_id": "user375322108",
+   "text": "физика — говно",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "физика — говно"
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "type": "message",
+   "date": "2026-10-22T09:00:00",
+   "date_unixtime": "1792648800",
+   "from": "Орлов Д. В.",
+   "from_id": "user561405096",
+   "text": "Лабораторные 3 и 4 выполняем на следующей неделе, допуск — по теории",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Лабораторные 3 и 4 выполняем на следующей неделе, допуск — по теории"
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "type": "message",
+   "date": "2026-10-22T09:20:00",
+   "date_unixtime": "1792650000",
+   "from": "Лёша Новиков",
+   "from_id": "user492116284",
+   "text": "а теория где?",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "а теория где?"
+    }
+   ]
+  },
+  {
+   "id": 14,
+   "type": "message",
+   "date": "2026-10-22T09:25:00",
+   "date_unixtime": "1792650300",
+   "from": "Орлов Д. В.",
+   "from_id": "user561405096",
+   "reply_to_message_id": 13,
+   "text": "В методичке, разделы 3.1–3.4",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "В методичке, разделы 3.1–3.4"
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "type": "message",
+   "date": "2026-10-22T19:00:00",
+   "date_unixtime": "1792684800",
+   "from": "Олег Петров",
+   "from_id": "user120250599",
+   "text": "физос сегодня огонь был, наконец-то понял импульс",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "физос сегодня огонь был, наконец-то понял импульс"
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "type": "message",
+   "date": "2026-10-23T14:00:00",
+   "date_unixtime": "1792753200",
+   "from": "Полина Зайцева",
+   "from_id": "user548927010",
+   "text": "кто-нибудь решил 2.11?",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "кто-нибудь решил 2.11?"
+    }
+   ]
+  },
+  {
+   "id": 17,
+   "type": "message",
+   "date": "2026-10-23T14:10:00",
+   "date_unixtime": "1792753800",
+   "from": "Саша Миронов",
+   "from_id": "user453285483",
+   "text": "неа",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "неа"
+    }
+   ]
+  },
+  {
+   "id": 18,
+   "type": "message",
+   "date": "2026-10-23T14:15:00",
+   "date_unixtime": "1792754100",
+   "from": "Полина Зайцева",
+   "from_id": "user548927010",
+   "text": "ладно",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "ладно"
+    }
+   ]
+  },
+  {
+   "id": 19,
+   "type": "message",
+   "date": "2026-10-24T12:00:00",
+   "date_unixtime": "1792832400",
+   "from": "Денис Ким",
+   "from_id": "user958535212",
+   "text": "скиньте фотку доски с последней пары",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "скиньте фотку доски с последней пары"
+    }
+   ]
+  },
+  {
+   "id": 20,
+   "type": "message",
+   "date": "2026-10-24T12:30:00",
+   "date_unixtime": "1792834200",
+   "from": "Полина Зайцева",
+   "from_id": "user548927010",
+   "file": "(File not included. Change data exporting settings to download.)",
+   "file_name": "доска_физика_23.10.jpg",
+   "mime_type": "application/octet-stream",
+   "text": "",
+   "text_entities": []
+  },
+  {
+   "id": 21,
+   "type": "message",
+   "date": "2026-10-26T09:05:00",
+   "date_unixtime": "1792994700",
+   "from": "Орлов Д. В.",
+   "from_id": "user561405096",
+   "text": "Добрый день! ДЗ №3 (задачи 3.14–3.20 из задачника) сдать до пятницы, в 23:59 закрываю приём в ЭУ.",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Добрый день! ДЗ №3 (задачи 3.14–3.20 из задачника) сдать до пятницы, в 23:59 закрываю приём в ЭУ."
+    }
+   ]
+  },
+  {
+   "id": 22,
+   "type": "message",
+   "date": "2026-10-26T09:07:00",
+   "date_unixtime": "1792994820",
+   "from": "Кирилл Лебедев",
+   "from_id": "user375322108",
+   "text": "спасибо!",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "спасибо!"
+    }
+   ]
+  },
+  {
+   "id": 23,
+   "type": "message",
+   "date": "2026-10-26T20:00:00",
+   "date_unixtime": "1793034000",
+   "from": "Аня Соколова",
+   "from_id": "user466317201",
+   "text": "у кого получился ответ в 3.15? у меня 4.2 м/с",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "у кого получился ответ в 3.15? у меня 4.2 м/с"
+    }
+   ]
+  },
+  {
+   "id": 24,
+   "type": "message",
+   "date": "2026-10-26T20:10:00",
+   "date_unixtime": "1793034600",
+   "from": "Олег Петров",
+   "from_id": "user120250599",
+   "reply_to_message_id": 23,
+   "text": "у меня 4.5",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "у меня 4.5"
+    }
+   ]
+  },
+  {
+   "id": 25,
+   "type": "message",
+   "date": "2026-10-27T13:30:00",
+   "date_unixtime": "1793097000",
+   "from": "Аня Соколова",
+   "from_id": "user466317201",
+   "text": "А можно сдать ДЗ в понедельник?",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "А можно сдать ДЗ в понедельник?"
+    }
+   ]
+  },
+  {
+   "id": 26,
+   "type": "message",
+   "date": "2026-10-27T13:45:00",
+   "date_unixtime": "1793097900",
+   "from": "Орлов Д. В.",
+   "from_id": "user561405096",
+   "reply_to_message_id": 25,
+   "text": "Можно, срок ДЗ №3 продлеваю до понедельника 02.11, 23:59.",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Можно, срок ДЗ №3 продлеваю до понедельника 02.11, 23:59."
+    }
+   ]
+  },
+  {
+   "id": 27,
+   "type": "message",
+   "date": "2026-10-27T13:50:00",
+   "date_unixtime": "1793098200",
+   "from": "Вика Белкина",
+   "from_id": "user201223606",
+   "text": "спасибо огромное!!!",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "спасибо огромное!!!"
+    }
+   ]
+  },
+  {
+   "id": 28,
+   "type": "message",
+   "date": "2026-10-28T12:00:00",
+   "date_unixtime": "1793178000",
+   "from": "Орлов Д. В.",
+   "from_id": "user561405096",
+   "text": "",
+   "rich_message": {
+    "blocks": [
+     {
+      "type": "paragraph",
+      "text": {
+       "type": "plain",
+       "text": "Темы РК-1:"
+      }
+     },
+     {
+      "type": "list",
+      "kind": "bullet",
+      "items": [
+       {
+        "text": {
+         "type": "plain",
+         "text": "механика"
+        }
+       },
+       {
+        "text": {
+         "type": "plain",
+         "text": "молекулярная физика"
+        }
+       }
+      ]
+     },
+     {
+      "type": "paragraph",
+      "text": {
+       "type": "plain",
+       "text": "РК-1 пройдёт 13 ноября на паре"
+      }
+     }
+    ]
+   },
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Темы РК-1:\n• механика\n• молекулярная физика\nРК-1 пройдёт 13 ноября на паре"
+    }
+   ]
+  },
+  {
+   "id": 29,
+   "type": "message",
+   "date": "2026-10-28T12:05:00",
+   "date_unixtime": "1793178300",
+   "from": "Денис Ким",
+   "from_id": "user958535212",
+   "text": "😱",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "😱"
+    }
+   ]
+  },
+  {
+   "id": 30,
+   "type": "message",
+   "date": "2026-10-28T19:00:00",
+   "date_unixtime": "1793203200",
+   "from": "Саша Миронов",
+   "from_id": "user453285483",
+   "text": "РК-1 сложный будет?",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "РК-1 сложный будет?"
+    }
+   ]
+  },
+  {
+   "id": 31,
+   "type": "message",
+   "date": "2026-10-28T19:30:00",
+   "date_unixtime": "1793205000",
+   "from": "Орлов Д. В.",
+   "from_id": "user561405096",
+   "reply_to_message_id": 30,
+   "text": "Не сложнее ДЗ. Консультация перед РК — 12 ноября в 17:00, ауд. 241",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Не сложнее ДЗ. Консультация перед РК — 12 ноября в 17:00, ауд. 241"
+    }
+   ]
+  },
+  {
+   "id": 32,
+   "type": "message",
+   "date": "2026-10-29T15:00:00",
+   "date_unixtime": "1793275200",
+   "from": "Саша Миронов",
+   "from_id": "user453285483",
+   "text": "кто на физру завтра?",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "кто на физру завтра?"
+    }
+   ]
+  },
+  {
+   "id": 33,
+   "type": "message",
+   "date": "2026-10-29T15:30:00",
+   "date_unixtime": "1793277000",
+   "from": "Лёша Новиков",
+   "from_id": "user492116284",
+   "text": "физ-ра в 9 утра это бесчеловечно",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "физ-ра в 9 утра это бесчеловечно"
+    }
+   ]
+  },
+  {
+   "id": 34,
+   "type": "message",
+   "date": "2026-10-30T09:00:00",
+   "date_unixtime": "1793340000",
+   "from": "Орлов Д. В.",
+   "from_id": "user561405096",
+   "text": "Лабораторную №3 сдаём к следующей паре, бланки у лаборанта",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Лабораторную №3 сдаём к следующей паре, бланки у лаборанта"
+    }
+   ]
+  },
+  {
+   "id": 35,
+   "type": "message",
+   "date": "2026-10-30T09:02:00",
+   "date_unixtime": "1793340120",
+   "from": "Денис Ким",
+   "from_id": "user958535212",
+   "file": "(File not included. Change data exporting settings to download.)",
+   "media_type": "sticker",
+   "sticker_emoji": "👍",
+   "width": 512,
+   "height": 512,
+   "text": "",
+   "text_entities": []
+  }
+ ]
+}

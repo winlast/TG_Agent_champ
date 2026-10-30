@@ -24,6 +24,7 @@ def base(settings):
     ("с пятницы на понедельник", "пн 02.11, 23:59"),
     ("защита 2.11 в 10.15", "пн 02.11, 10:15"),
     ("на этой неделе", "вс 01.11, 23:59"),
+    ("Чемпионат пройдёт 30 октября с 16:00.", "пт 30.10, 16:00"),
 ])
 def test_parse_due(settings, base, text, expected):
     r = parse_due(text, base, settings.tz, default_time_for("deadline"))

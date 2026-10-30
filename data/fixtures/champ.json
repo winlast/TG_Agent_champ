@@ -1,0 +1,694 @@
+{
+ "name": "Кейс-чемпионат",
+ "type": "private_supergroup",
+ "id": 1000000004,
+ "messages": [
+  {
+   "id": 1,
+   "type": "service",
+   "date": "2026-10-19T10:00:00",
+   "date_unixtime": "1792393200",
+   "actor": "Громов Ю. Е. (АСОИУ)",
+   "actor_id": "user989760073",
+   "action": "topic_created",
+   "title": "Объявления",
+   "text": "",
+   "text_entities": []
+  },
+  {
+   "id": 2,
+   "type": "service",
+   "date": "2026-10-19T10:00:00",
+   "date_unixtime": "1792393200",
+   "actor": "Громов Ю. Е. (АСОИУ)",
+   "actor_id": "user989760073",
+   "action": "topic_created",
+   "title": "Задание",
+   "text": "",
+   "text_entities": []
+  },
+  {
+   "id": 3,
+   "type": "service",
+   "date": "2026-10-19T10:00:00",
+   "date_unixtime": "1792393200",
+   "actor": "Громов Ю. Е. (АСОИУ)",
+   "actor_id": "user989760073",
+   "action": "topic_created",
+   "title": "Книги",
+   "text": "",
+   "text_entities": []
+  },
+  {
+   "id": 4,
+   "type": "service",
+   "date": "2026-10-19T10:00:00",
+   "date_unixtime": "1792393200",
+   "actor": "Громов Ю. Е. (АСОИУ)",
+   "actor_id": "user989760073",
+   "action": "topic_created",
+   "title": "Общение",
+   "text": "",
+   "text_entities": []
+  },
+  {
+   "id": 5,
+   "type": "message",
+   "date": "2026-10-19T10:05:00",
+   "date_unixtime": "1792393500",
+   "from": "Громов Ю. Е. (АСОИУ)",
+   "from_id": "user989760073",
+   "reply_to_message_id": 1,
+   "text": "Добро пожаловать в чат кейс-чемпионата по созданию ИИ-агентов! Здесь будут объявления и задание.",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Добро пожаловать в чат кейс-чемпионата по созданию ИИ-агентов! Здесь будут объявления и задание."
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "type": "message",
+   "date": "2026-10-19T10:10:00",
+   "date_unixtime": "1792393800",
+   "from": "Вика Белкина",
+   "from_id": "user201223606",
+   "text": "всем привет!",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "всем привет!"
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "type": "message",
+   "date": "2026-10-20T19:00:00",
+   "date_unixtime": "1792512000",
+   "from": "Саша Миронов",
+   "from_id": "user453285483",
+   "reply_to_message_id": 4,
+   "text": "у кого какие темы агентов? у нас сортировка почты",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "у кого какие темы агентов? у нас сортировка почты"
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "type": "message",
+   "date": "2026-10-20T19:10:00",
+   "date_unixtime": "1792512600",
+   "from": "Аня Соколова",
+   "from_id": "user466317201",
+   "reply_to_message_id": 4,
+   "text": "у нас чат-бот для расписания",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "у нас чат-бот для расписания"
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "type": "message",
+   "date": "2026-10-21T16:19:00",
+   "date_unixtime": "1792588740",
+   "from": "Громов Ю. Е. (АСОИУ)",
+   "from_id": "user989760073",
+   "reply_to_message_id": 2,
+   "text": "Описание задания:",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Описание задания:"
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "type": "message",
+   "date": "2026-10-21T16:19:40",
+   "date_unixtime": "1792588780",
+   "from": "Громов Ю. Е. (АСОИУ)",
+   "from_id": "user989760073",
+   "reply_to_message_id": 2,
+   "edited": "2026-10-21T16:24:00",
+   "edited_unixtime": "1792589040",
+   "text": "1. Разработать ИИ-агента по варианту А или Б.",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "1. Разработать ИИ-агента по варианту А или Б."
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "type": "message",
+   "date": "2026-10-21T16:20:20",
+   "date_unixtime": "1792588820",
+   "from": "Громов Ю. Е. (АСОИУ)",
+   "from_id": "user989760073",
+   "reply_to_message_id": 2,
+   "text": "2. Защита — презентация со скриншотами работы агента.",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "2. Защита — презентация со скриншотами работы агента."
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "type": "message",
+   "date": "2026-10-21T16:21:00",
+   "date_unixtime": "1792588860",
+   "from": "Громов Ю. Е. (АСОИУ)",
+   "from_id": "user989760073",
+   "reply_to_message_id": 2,
+   "text": "3. Возможны варианты:",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "3. Возможны варианты:"
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "type": "message",
+   "date": "2026-10-21T16:21:40",
+   "date_unixtime": "1792588900",
+   "from": "Громов Ю. Е. (АСОИУ)",
+   "from_id": "user989760073",
+   "reply_to_message_id": 2,
+   "text": "А. Индексация + RAG + инструменты через MCP",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "А. Индексация + RAG + инструменты через MCP"
+    }
+   ]
+  },
+  {
+   "id": 14,
+   "type": "message",
+   "date": "2026-10-21T16:22:20",
+   "date_unixtime": "1792588940",
+   "from": "Громов Ю. Е. (АСОИУ)",
+   "from_id": "user989760073",
+   "reply_to_message_id": 2,
+   "text": "Б. Мультиагентная система",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Б. Мультиагентная система"
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "type": "message",
+   "date": "2026-10-21T16:23:00",
+   "date_unixtime": "1792588980",
+   "from": "Громов Ю. Е. (АСОИУ)",
+   "from_id": "user989760073",
+   "reply_to_message_id": 2,
+   "text": "До сдачи у вас 1,5 недели.",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "До сдачи у вас 1,5 недели."
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "type": "message",
+   "date": "2026-10-21T16:40:00",
+   "date_unixtime": "1792590000",
+   "from": "Громов Ю. Е. (АСОИУ)",
+   "from_id": "user989760073",
+   "reply_to_message_id": 3,
+   "file": "(File not included. Change data exporting settings to download.)",
+   "file_name": "RAG_и_генеративный_ИИ.pdf",
+   "mime_type": "application/octet-stream",
+   "text": "",
+   "text_entities": []
+  },
+  {
+   "id": 17,
+   "type": "message",
+   "date": "2026-10-21T16:50:00",
+   "date_unixtime": "1792590600",
+   "from": "Громов Ю. Е. (АСОИУ)",
+   "from_id": "user989760073",
+   "reply_to_message_id": 3,
+   "file": "(File not included. Change data exporting settings to download.)",
+   "file_name": "Агенты_на_LangGraph.pdf",
+   "mime_type": "application/octet-stream",
+   "text": "",
+   "text_entities": []
+  },
+  {
+   "id": 18,
+   "type": "message",
+   "date": "2026-10-21T17:00:00",
+   "date_unixtime": "1792591200",
+   "from": "Денис Ким",
+   "from_id": "user958535212",
+   "reply_to_message_id": 4,
+   "text": "а что за победу дают?",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "а что за победу дают?"
+    }
+   ]
+  },
+  {
+   "id": 19,
+   "type": "message",
+   "date": "2026-10-21T17:05:00",
+   "date_unixtime": "1792591500",
+   "from": "Кирилл Лебедев",
+   "from_id": "user375322108",
+   "reply_to_message_id": 4,
+   "text": "автомат наверное 😏",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "автомат наверное 😏"
+    }
+   ]
+  },
+  {
+   "id": 20,
+   "type": "message",
+   "date": "2026-10-22T12:00:00",
+   "date_unixtime": "1792659600",
+   "from": "Громов Ю. Е. (АСОИУ)",
+   "from_id": "user989760073",
+   "reply_to_message_id": 1,
+   "text": "Кейс-чемпионат пройдёт 30 октября (пятница) с 15:55 до 20:45. Номера аудиторий будут уточняться.",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Кейс-чемпионат пройдёт 30 октября (пятница) с 15:55 до 20:45. Номера аудиторий будут уточняться."
+    }
+   ]
+  },
+  {
+   "id": 21,
+   "type": "service",
+   "date": "2026-10-22T12:01:00",
+   "date_unixtime": "1792659660",
+   "actor": "Громов Ю. Е. (АСОИУ)",
+   "actor_id": "user989760073",
+   "action": "pin_message",
+   "text": "",
+   "text_entities": [],
+   "message_id": 20,
+   "reply_to_message_id": 1
+  },
+  {
+   "id": 22,
+   "type": "message",
+   "date": "2026-10-22T12:30:00",
+   "date_unixtime": "1792661400",
+   "from": "Вика Белкина",
+   "from_id": "user201223606",
+   "reply_to_message_id": 4,
+   "text": "Los Pollos Hermanos в деле 🔥",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Los Pollos Hermanos в деле 🔥"
+    }
+   ]
+  },
+  {
+   "id": 23,
+   "type": "message",
+   "date": "2026-10-22T12:35:00",
+   "date_unixtime": "1792661700",
+   "from": "Лёша Новиков",
+   "from_id": "user492116284",
+   "reply_to_message_id": 4,
+   "text": "Петруша тоже",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Петруша тоже"
+    }
+   ]
+  },
+  {
+   "id": 24,
+   "type": "message",
+   "date": "2026-10-23T10:00:00",
+   "date_unixtime": "1792738800",
+   "from": "Олег Петров",
+   "from_id": "user120250599",
+   "reply_to_message_id": 4,
+   "text": "А если команда не может 30 октября?",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "А если команда не может 30 октября?"
+    }
+   ]
+  },
+  {
+   "id": 25,
+   "type": "message",
+   "date": "2026-10-23T11:30:00",
+   "date_unixtime": "1792744200",
+   "from": "Громов Ю. Е. (АСОИУ)",
+   "from_id": "user989760073",
+   "reply_to_message_id": 24,
+   "text": "Можно выступить в другой день, напишите мне заранее",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Можно выступить в другой день, напишите мне заранее"
+    }
+   ]
+  },
+  {
+   "id": 26,
+   "type": "message",
+   "date": "2026-10-24T16:00:00",
+   "date_unixtime": "1792846800",
+   "from": "Кирилл Лебедев",
+   "from_id": "user375322108",
+   "reply_to_message_id": 4,
+   "text": "а можно использовать облачные модели?",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "а можно использовать облачные модели?"
+    }
+   ]
+  },
+  {
+   "id": 27,
+   "type": "message",
+   "date": "2026-10-24T17:00:00",
+   "date_unixtime": "1792850400",
+   "from": "Громов Ю. Е. (АСОИУ)",
+   "from_id": "user989760073",
+   "reply_to_message_id": 26,
+   "text": "Нет, только локальные модели через Ollama, порядка 7–8 млрд параметров",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Нет, только локальные модели через Ollama, порядка 7–8 млрд параметров"
+    }
+   ]
+  },
+  {
+   "id": 28,
+   "type": "message",
+   "date": "2026-10-26T11:00:00",
+   "date_unixtime": "1793001600",
+   "from": "Громов Ю. Е. (АСОИУ)",
+   "from_id": "user989760073",
+   "reply_to_message_id": 1,
+   "text": "",
+   "rich_message": {
+    "blocks": [
+     {
+      "type": "paragraph",
+      "text": {
+       "type": "plain",
+       "text": "Требования к презентации:"
+      }
+     },
+     {
+      "type": "list",
+      "kind": "bullet",
+      "items": [
+       {
+        "text": {
+         "type": "plain",
+         "text": "титульный слайд"
+        }
+       },
+       {
+        "text": {
+         "type": "plain",
+         "text": "состав команды с ФИО"
+        }
+       },
+       {
+        "text": {
+         "type": "plain",
+         "text": "архитектура"
+        }
+       },
+       {
+        "text": {
+         "type": "plain",
+         "text": "скриншоты работы"
+        }
+       },
+       {
+        "text": {
+         "type": "plain",
+         "text": "ссылка на репозиторий"
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Требования к презентации:\n• титульный слайд\n• состав команды с ФИО\n• архитектура\n• скриншоты работы\n• ссылка на репозиторий"
+    }
+   ]
+  },
+  {
+   "id": 29,
+   "type": "message",
+   "date": "2026-10-26T15:00:00",
+   "date_unixtime": "1793016000",
+   "from": "Саша Миронов",
+   "from_id": "user453285483",
+   "reply_to_message_id": 4,
+   "text": "кто уже сделал RAG? у нас эмбеддинги не грузятся",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "кто уже сделал RAG? у нас эмбеддинги не грузятся"
+    }
+   ]
+  },
+  {
+   "id": 30,
+   "type": "message",
+   "date": "2026-10-26T15:10:00",
+   "date_unixtime": "1793016600",
+   "from": "Аня Соколова",
+   "from_id": "user466317201",
+   "reply_to_message_id": 4,
+   "text": "попробуйте bge-m3 через ollama",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "попробуйте bge-m3 через ollama"
+    }
+   ]
+  },
+  {
+   "id": 31,
+   "type": "message",
+   "date": "2026-10-27T11:00:00",
+   "date_unixtime": "1793088000",
+   "from": "Громов Ю. Е. (АСОИУ)",
+   "from_id": "user989760073",
+   "reply_to_message_id": 1,
+   "text": "Чемпионат будет проходить в аудитории 501ю, 30 октября с 16:00.",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Чемпионат будет проходить в аудитории 501ю, 30 октября с 16:00."
+    }
+   ]
+  },
+  {
+   "id": 32,
+   "type": "message",
+   "date": "2026-10-27T11:05:00",
+   "date_unixtime": "1793088300",
+   "from": "Лёша Новиков",
+   "from_id": "user492116284",
+   "reply_to_message_id": 4,
+   "text": "а что за победу дают?",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "а что за победу дают?"
+    }
+   ]
+  },
+  {
+   "id": 33,
+   "type": "message",
+   "date": "2026-10-27T18:00:00",
+   "date_unixtime": "1793113200",
+   "from": "Вика Белкина",
+   "from_id": "user201223606",
+   "reply_to_message_id": 4,
+   "text": "у кого qwen3 нормально вызывает инструменты?",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "у кого qwen3 нормально вызывает инструменты?"
+    }
+   ]
+  },
+  {
+   "id": 34,
+   "type": "message",
+   "date": "2026-10-28T18:30:00",
+   "date_unixtime": "1793201400",
+   "from": "Громов Ю. Е. (АСОИУ)",
+   "from_id": "user989760073",
+   "reply_to_message_id": 24,
+   "text": "Уточнение: выступить в другой день нельзя, только 30-го.",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Уточнение: выступить в другой день нельзя, только 30-го."
+    }
+   ]
+  },
+  {
+   "id": 35,
+   "type": "message",
+   "date": "2026-10-29T09:00:00",
+   "date_unixtime": "1793253600",
+   "from": "Громов Ю. Е. (АСОИУ)",
+   "from_id": "user989760073",
+   "reply_to_message_id": 1,
+   "text": [
+    "Порядок выступлений опубликован: ",
+    {
+     "type": "link",
+     "text": "https://docs.example.ru/champ-order"
+    },
+    ""
+   ],
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Порядок выступлений опубликован: https://docs.example.ru/champ-order"
+    }
+   ]
+  },
+  {
+   "id": 36,
+   "type": "message",
+   "date": "2026-10-29T09:30:00",
+   "date_unixtime": "1793255400",
+   "from": "Денис Ким",
+   "from_id": "user958535212",
+   "reply_to_message_id": 4,
+   "text": "мы последние 😭",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "мы последние 😭"
+    }
+   ]
+  },
+  {
+   "id": 37,
+   "type": "message",
+   "date": "2026-10-29T20:00:00",
+   "date_unixtime": "1793293200",
+   "from": "Вика Белкина",
+   "from_id": "user201223606",
+   "text": "ВСЕХ ЖДЕМ!!!",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "ВСЕХ ЖДЕМ!!!"
+    }
+   ]
+  },
+  {
+   "id": 38,
+   "type": "message",
+   "date": "2026-10-29T21:00:00",
+   "date_unixtime": "1793296800",
+   "from": "Денис Ким",
+   "from_id": "user958535212",
+   "reply_to_message_id": 4,
+   "text": "презентация готова, осталось отрепетировать",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "презентация готова, осталось отрепетировать"
+    }
+   ]
+  },
+  {
+   "id": 39,
+   "type": "message",
+   "date": "2026-10-30T08:00:00",
+   "date_unixtime": "1793336400",
+   "from": "Громов Ю. Е. (АСОИУ)",
+   "from_id": "user989760073",
+   "reply_to_message_id": 1,
+   "text": "Напоминаю: сегодня в 16:00, ауд. 501ю. Регламент — 10 минут на команду.",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Напоминаю: сегодня в 16:00, ауд. 501ю. Регламент — 10 минут на команду."
+    }
+   ]
+  },
+  {
+   "id": 40,
+   "type": "message",
+   "date": "2026-10-30T08:10:00",
+   "date_unixtime": "1793337000",
+   "from": "Кирилл Лебедев",
+   "from_id": "user375322108",
+   "reply_to_message_id": 4,
+   "text": "волнуюсь",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "волнуюсь"
+    }
+   ]
+  },
+  {
+   "id": 41,
+   "type": "message",
+   "date": "2026-10-30T08:20:00",
+   "date_unixtime": "1793337600",
+   "from": "Полина Зайцева",
+   "from_id": "user548927010",
+   "reply_to_message_id": 4,
+   "text": "удачи всем!",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "удачи всем!"
+    }
+   ]
+  }
+ ]
+}

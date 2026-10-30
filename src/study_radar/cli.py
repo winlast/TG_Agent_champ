@@ -138,6 +138,7 @@ def simulate(scenario: Path = typer.Option(ROOT / "data/scenarios/demo.yaml", he
         reset_runtime(s, sv)
     sc = load_scenario(scenario, s.tz)
     sv.db.set_meta("run_backend", "fake" if fake else f"ollama:{s.llm.model}")
+    sv.db.set_meta("run_embedder", sv.embedder.name)
     sv.db.set_meta("run_status", "running")
     sv.db.set_meta("run_total", str(len(sc.events)))
     console.print(f"[bold]Сценарий:[/] {sc.name} — событий: {len(sc.events)}; LLM: {sv.llm.label}; "
@@ -243,6 +244,7 @@ def eval_cmd(labels: Path = typer.Option(ROOT / "data/eval/labeled.jsonl", help=
              fixtures: Path = typer.Option(ROOT / "data/fixtures", help="Папка с синтетическими экспортами."),
              act_mode: str = typer.Option("llm", help="llm — честная проверка MCP-вызовов; deterministic — быстрее."),
              limit: int = typer.Option(0, help="Ограничить число постов (0 = все)."),
+             act_sample: int = typer.Option(25, help="Для скольких важных постов LLM сама вызывает MCP (0 = для всех)."),
              out: Path = typer.Option(ROOT / "docs/eval_report.md", help="Куда писать отчёт."),
              fake: bool = typer.Option(False, help="FakeLLM (проверка кода; отчёт пишется в data/runtime)."),
              model: Optional[str] = typer.Option(None, help="Модель Ollama, например qwen3:4b.")) -> None:
@@ -257,7 +259,7 @@ def eval_cmd(labels: Path = typer.Option(ROOT / "data/eval/labeled.jsonl", help=
         _check_ollama_or_exit(s)
     from study_radar.eval import run_eval
 
-    report = asyncio.run(run_eval(s, labels, fixtures, out, limit=limit, console=console))
+    report = asyncio.run(run_eval(s, labels, fixtures, out, limit=limit, act_sample=act_sample, console=console))
     console.print(f"[green]✓ Отчёт:[/] {report}")
 
 

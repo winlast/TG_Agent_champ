@@ -323,10 +323,11 @@ class AgentRuntime:
                 reason = reason or (f"после {self.s.agent.max_attempts} попыток не выполнено: "
                                     + ", ".join(m["tool"] for m in missing)
                                     + (f"; ошибочных вызовов: {len(bad)}" if bad else ""))
+        executor = "executor" if self.s.agent.act_mode == "deterministic" else "fallback"
         for item in missing:
             ok, out, ms = await self.toolbox.call(item["tool"], item["args"])
-            records.append(ToolCallRecord(tool=item["tool"], args=item["args"], result=out, ok=ok, by="fallback", ms=ms))
-            fallback = True
+            records.append(ToolCallRecord(tool=item["tool"], args=item["args"], result=out, ok=ok, by=executor, ms=ms))
+            fallback = fallback or executor == "fallback"
         for dl_id, due in wrong_dates(plan, records):   # LLM ошиблась в дате — исправляем через MCP
             ok, out, ms = await self.toolbox.call("update_deadline", {
                 "deadline_id": dl_id, "due_at": due, "change_note": "исправление даты после валидации"})
@@ -334,7 +335,7 @@ class AgentRuntime:
                                           result=out, ok=ok, by="fallback", ms=ms))
             fallback = True
             reason = (reason + "; " if reason else "") + "LLM передала неверную дату — исправлено"
-        if fallback and reason:
+        if fallback:
             log.info("Фолбэк для %s: %s", post.post_id, reason)
         return {"plan": plan, "act_prompt": user, "tool_calls": [r.model_dump(mode="json") for r in records],
                 "fallback": fallback, "fallback_reason": reason,

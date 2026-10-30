@@ -1,0 +1,490 @@
+{
+ "name": "Элтех лабы",
+ "type": "private_supergroup",
+ "id": 1000000003,
+ "messages": [
+  {
+   "id": 1,
+   "type": "message",
+   "date": "2026-10-19T11:00:00",
+   "date_unixtime": "1792396800",
+   "from": "Ковалёв А. П.",
+   "from_id": "user640637185",
+   "text": "Коллеги, график такой: защита ЛР1 — 27.10 на паре. Остальные сроки сообщу позже.",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Коллеги, график такой: защита ЛР1 — 27.10 на паре. Остальные сроки сообщу позже."
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "type": "message",
+   "date": "2026-10-19T11:05:00",
+   "date_unixtime": "1792397100",
+   "from": "Лёша Новиков",
+   "from_id": "user492116284",
+   "text": "спасибо",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "спасибо"
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "type": "message",
+   "date": "2026-10-19T18:00:00",
+   "date_unixtime": "1792422000",
+   "from": "Кирилл Лебедев",
+   "from_id": "user375322108",
+   "text": "кто-нибудь знает, лабы в 512 или 514?",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "кто-нибудь знает, лабы в 512 или 514?"
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "type": "message",
+   "date": "2026-10-19T18:30:00",
+   "date_unixtime": "1792423800",
+   "from": "Ковалёв А. П.",
+   "from_id": "user640637185",
+   "reply_to_message_id": 3,
+   "text": "Лабораторные проходят в 512",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Лабораторные проходят в 512"
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "type": "message",
+   "date": "2026-10-20T15:00:00",
+   "date_unixtime": "1792497600",
+   "from": "Саша Миронов",
+   "from_id": "user453285483",
+   "text": "элтех это вообще жесть, ничего не понятно",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "элтех это вообще жесть, ничего не понятно"
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "type": "message",
+   "date": "2026-10-20T15:20:00",
+   "date_unixtime": "1792498800",
+   "from": "Полина Зайцева",
+   "from_id": "user548927010",
+   "text": "кто сделал предварительный расчёт к ЛР1?",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "кто сделал предварительный расчёт к ЛР1?"
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "type": "message",
+   "date": "2026-10-20T15:30:00",
+   "date_unixtime": "1792499400",
+   "from": "Аня Соколова",
+   "from_id": "user466317201",
+   "text": "я, скину вечером",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "я, скину вечером"
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "type": "message",
+   "date": "2026-10-20T21:00:00",
+   "date_unixtime": "1792519200",
+   "from": "Аня Соколова",
+   "from_id": "user466317201",
+   "file": "(File not included. Change data exporting settings to download.)",
+   "file_name": "ЛР1_расчет_пример.xlsx",
+   "mime_type": "application/octet-stream",
+   "text": "",
+   "text_entities": []
+  },
+  {
+   "id": 9,
+   "type": "message",
+   "date": "2026-10-21T10:00:00",
+   "date_unixtime": "1792566000",
+   "from": "Денис Ким",
+   "from_id": "user958535212",
+   "text": "кто уже собрал стенд?",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "кто уже собрал стенд?"
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "type": "message",
+   "date": "2026-10-22T10:00:00",
+   "date_unixtime": "1792652400",
+   "from": "Ковалёв А. П.",
+   "from_id": "user640637185",
+   "text": "По ЛР2:",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "По ЛР2:"
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "type": "message",
+   "date": "2026-10-22T10:00:40",
+   "date_unixtime": "1792652440",
+   "from": "Ковалёв А. П.",
+   "from_id": "user640637185",
+   "text": "1. Собрать схему по варианту",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "1. Собрать схему по варианту"
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "type": "message",
+   "date": "2026-10-22T10:01:20",
+   "date_unixtime": "1792652480",
+   "from": "Ковалёв А. П.",
+   "from_id": "user640637185",
+   "text": "2. Снять ВАХ диода",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "2. Снять ВАХ диода"
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "type": "message",
+   "date": "2026-10-22T10:02:00",
+   "date_unixtime": "1792652520",
+   "from": "Ковалёв А. П.",
+   "from_id": "user640637185",
+   "text": "3. Отчёт — по шаблону кафедры",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "3. Отчёт — по шаблону кафедры"
+    }
+   ]
+  },
+  {
+   "id": 14,
+   "type": "message",
+   "date": "2026-10-22T10:10:00",
+   "date_unixtime": "1792653000",
+   "from": "Денис Ким",
+   "from_id": "user958535212",
+   "text": "а варианты где?",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "а варианты где?"
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "type": "message",
+   "date": "2026-10-22T10:15:00",
+   "date_unixtime": "1792653300",
+   "from": "Ковалёв А. П.",
+   "from_id": "user640637185",
+   "reply_to_message_id": 14,
+   "text": "Варианты в ЭУ, вариант = номер в журнале",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Варианты в ЭУ, вариант = номер в журнале"
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "type": "message",
+   "date": "2026-10-23T09:00:00",
+   "date_unixtime": "1792735200",
+   "from": "Полина Зайцева",
+   "from_id": "user548927010",
+   "text": "ребят, мультиметр в 512 сломан, берите из 514",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "ребят, мультиметр в 512 сломан, берите из 514"
+    }
+   ]
+  },
+  {
+   "id": 17,
+   "type": "message",
+   "date": "2026-10-23T18:00:00",
+   "date_unixtime": "1792767600",
+   "from": "Кирилл Лебедев",
+   "from_id": "user375322108",
+   "text": "сделал схему, она дымится 🔥😂",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "сделал схему, она дымится 🔥😂"
+    }
+   ]
+  },
+  {
+   "id": 18,
+   "type": "message",
+   "date": "2026-10-26T10:15:00",
+   "date_unixtime": "1792998900",
+   "from": "Ковалёв А. П.",
+   "from_id": "user640637185",
+   "text": "Защита ЛР2 в пятницу 30.10 в 10:15, ауд. 512. Без отчёта не допускаю.",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Защита ЛР2 в пятницу 30.10 в 10:15, ауд. 512. Без отчёта не допускаю."
+    }
+   ]
+  },
+  {
+   "id": 19,
+   "type": "message",
+   "date": "2026-10-26T10:20:00",
+   "date_unixtime": "1792999200",
+   "from": "Олег Петров",
+   "from_id": "user120250599",
+   "text": "ок",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "ок"
+    }
+   ]
+  },
+  {
+   "id": 20,
+   "type": "message",
+   "date": "2026-10-26T12:00:00",
+   "date_unixtime": "1793005200",
+   "from": "Саша Миронов",
+   "from_id": "user453285483",
+   "text": "кто пойдёт защищать первым?",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "кто пойдёт защищать первым?"
+    }
+   ]
+  },
+  {
+   "id": 21,
+   "type": "message",
+   "date": "2026-10-27T08:30:00",
+   "date_unixtime": "1793079000",
+   "from": "Ковалёв А. П.",
+   "from_id": "user640637185",
+   "text": "Сегодня защита ЛР1, начинаем в 10:15, не опаздывайте",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Сегодня защита ЛР1, начинаем в 10:15, не опаздывайте"
+    }
+   ]
+  },
+  {
+   "id": 22,
+   "type": "message",
+   "date": "2026-10-27T12:00:00",
+   "date_unixtime": "1793091600",
+   "from": "Лёша Новиков",
+   "from_id": "user492116284",
+   "text": "защитил!!! 🎉",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "защитил!!! 🎉"
+    }
+   ]
+  },
+  {
+   "id": 23,
+   "type": "message",
+   "date": "2026-10-27T12:05:00",
+   "date_unixtime": "1793091900",
+   "from": "Денис Ким",
+   "from_id": "user958535212",
+   "text": "+1, тоже защитил",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "+1, тоже защитил"
+    }
+   ]
+  },
+  {
+   "id": 24,
+   "type": "message",
+   "date": "2026-10-28T09:05:00",
+   "date_unixtime": "1793167500",
+   "from": "Ковалёв А. П.",
+   "from_id": "user640637185",
+   "reply_to_message_id": 18,
+   "text": "лабу перенесли на среду",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "лабу перенесли на среду"
+    }
+   ]
+  },
+  {
+   "id": 25,
+   "type": "message",
+   "date": "2026-10-28T09:10:00",
+   "date_unixtime": "1793167800",
+   "from": "Лёша Новиков",
+   "from_id": "user492116284",
+   "text": "ура!!!",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "ура!!!"
+    }
+   ]
+  },
+  {
+   "id": 26,
+   "type": "message",
+   "date": "2026-10-28T09:12:00",
+   "date_unixtime": "1793167920",
+   "from": "Денис Ким",
+   "from_id": "user958535212",
+   "text": "лучший препод",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "лучший препод"
+    }
+   ]
+  },
+  {
+   "id": 27,
+   "type": "message",
+   "date": "2026-10-29T14:00:00",
+   "date_unixtime": "1793271600",
+   "from": "Полина Зайцева",
+   "from_id": "user548927010",
+   "text": "а ЛР3 когда?",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "а ЛР3 когда?"
+    }
+   ]
+  },
+  {
+   "id": 28,
+   "type": "message",
+   "date": "2026-10-29T14:30:00",
+   "date_unixtime": "1793273400",
+   "from": "Ковалёв А. П.",
+   "from_id": "user640637185",
+   "reply_to_message_id": 27,
+   "text": "ЛР3 сдать до 13 ноября, задание выложу в понедельник",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "ЛР3 сдать до 13 ноября, задание выложу в понедельник"
+    }
+   ]
+  },
+  {
+   "id": 29,
+   "type": "message",
+   "date": "2026-10-29T14:35:00",
+   "date_unixtime": "1793273700",
+   "from": "Полина Зайцева",
+   "from_id": "user548927010",
+   "text": "спасибо!",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "спасибо!"
+    }
+   ]
+  },
+  {
+   "id": 30,
+   "type": "message",
+   "date": "2026-10-29T22:00:00",
+   "date_unixtime": "1793300400",
+   "from": "Саша Миронов",
+   "from_id": "user453285483",
+   "text": "кто-нибудь знает формулу для мощности в ЛР2? P = UI или что",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "кто-нибудь знает формулу для мощности в ЛР2? P = UI или что"
+    }
+   ]
+  },
+  {
+   "id": 31,
+   "type": "message",
+   "date": "2026-10-29T22:05:00",
+   "date_unixtime": "1793300700",
+   "from": "Аня Соколова",
+   "from_id": "user466317201",
+   "reply_to_message_id": 30,
+   "text": "P=UI cos φ",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "P=UI cos φ"
+    }
+   ]
+  },
+  {
+   "id": 32,
+   "type": "message",
+   "date": "2026-10-30T11:00:00",
+   "date_unixtime": "1793347200",
+   "from": "Аня Соколова",
+   "from_id": "user466317201",
+   "text": "кто знает, Ковалёв сегодня принимает долги по ЛР1?",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "кто знает, Ковалёв сегодня принимает долги по ЛР1?"
+    }
+   ]
+  }
+ ]
+}

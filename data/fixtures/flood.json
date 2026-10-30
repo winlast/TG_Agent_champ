@@ -1,0 +1,593 @@
+{
+ "name": "ИУ5-31Б Флудилка",
+ "type": "private_supergroup",
+ "id": 1000000005,
+ "messages": [
+  {
+   "id": 1,
+   "type": "message",
+   "date": "2026-10-19T20:00:00",
+   "date_unixtime": "1792429200",
+   "from": "Кирилл Лебедев",
+   "from_id": "user375322108",
+   "text": "кто играет в доту сегодня?",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "кто играет в доту сегодня?"
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "type": "message",
+   "date": "2026-10-19T20:05:00",
+   "date_unixtime": "1792429500",
+   "from": "Денис Ким",
+   "from_id": "user958535212",
+   "text": "я",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "я"
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "type": "message",
+   "date": "2026-10-19T20:06:00",
+   "date_unixtime": "1792429560",
+   "from": "Олег Петров",
+   "from_id": "user120250599",
+   "text": "+",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "+"
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "type": "message",
+   "date": "2026-10-19T23:00:00",
+   "date_unixtime": "1792440000",
+   "from": "Аня Соколова",
+   "from_id": "user466317201",
+   "text": "спокойной ночи всем",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "спокойной ночи всем"
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "type": "message",
+   "date": "2026-10-20T09:00:00",
+   "date_unixtime": "1792476000",
+   "from": "Саша Миронов",
+   "from_id": "user453285483",
+   "text": "кто проспал первую пару? 🙋",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "кто проспал первую пару? 🙋"
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "type": "message",
+   "date": "2026-10-20T13:00:00",
+   "date_unixtime": "1792490400",
+   "from": "Лёша Новиков",
+   "from_id": "user492116284",
+   "file": "(File not included. Change data exporting settings to download.)",
+   "media_type": "sticker",
+   "sticker_emoji": "😂",
+   "width": 512,
+   "height": 512,
+   "text": "",
+   "text_entities": []
+  },
+  {
+   "id": 7,
+   "type": "message",
+   "date": "2026-10-20T13:05:00",
+   "date_unixtime": "1792490700",
+   "from": "Вика Белкина",
+   "from_id": "user201223606",
+   "text": "мем дня: студент перед дедлайном 🤡",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "мем дня: студент перед дедлайном 🤡"
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "type": "message",
+   "date": "2026-10-20T22:30:00",
+   "date_unixtime": "1792524600",
+   "from": "Аня Соколова",
+   "from_id": "user466317201",
+   "text": "кто-нибудь спит вообще?",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "кто-нибудь спит вообще?"
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "type": "message",
+   "date": "2026-10-21T08:00:00",
+   "date_unixtime": "1792558800",
+   "from": "Саша Миронов",
+   "from_id": "user453285483",
+   "text": "доброе утро страна",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "доброе утро страна"
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "type": "message",
+   "date": "2026-10-21T12:00:00",
+   "date_unixtime": "1792573200",
+   "from": "Кирилл Лебедев",
+   "from_id": "user375322108",
+   "text": "столовка сегодня норм",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "столовка сегодня норм"
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "type": "message",
+   "date": "2026-10-21T23:10:00",
+   "date_unixtime": "1792613400",
+   "from": "Денис Ким",
+   "from_id": "user958535212",
+   "text": "обожаю дедлайны в 3 ночи, лучший универ 🙃",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "обожаю дедлайны в 3 ночи, лучший универ 🙃"
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "type": "message",
+   "date": "2026-10-22T14:00:00",
+   "date_unixtime": "1792666800",
+   "from": "Полина Зайцева",
+   "from_id": "user548927010",
+   "text": "кто знает где 501ю?",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "кто знает где 501ю?"
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "type": "message",
+   "date": "2026-10-22T14:05:00",
+   "date_unixtime": "1792667100",
+   "from": "Лёша Новиков",
+   "from_id": "user492116284",
+   "reply_to_message_id": 12,
+   "text": "в учебно-лабораторном корпусе, 5 этаж",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "в учебно-лабораторном корпусе, 5 этаж"
+    }
+   ]
+  },
+  {
+   "id": 14,
+   "type": "message",
+   "date": "2026-10-22T23:30:00",
+   "date_unixtime": "1792701000",
+   "from": "Кирилл Лебедев",
+   "from_id": "user375322108",
+   "text": "сделал ДЗ по физике за 20 минут, чувствую себя гением",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "сделал ДЗ по физике за 20 минут, чувствую себя гением"
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "type": "message",
+   "date": "2026-10-23T19:00:00",
+   "date_unixtime": "1792771200",
+   "from": "Олег Петров",
+   "from_id": "user120250599",
+   "text": "пятница!!!",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "пятница!!!"
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "type": "message",
+   "date": "2026-10-23T19:01:00",
+   "date_unixtime": "1792771260",
+   "from": "Вика Белкина",
+   "from_id": "user201223606",
+   "text": "🎉🎉🎉",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "🎉🎉🎉"
+    }
+   ]
+  },
+  {
+   "id": 17,
+   "type": "message",
+   "date": "2026-10-24T15:00:00",
+   "date_unixtime": "1792843200",
+   "from": "Кирилл Лебедев",
+   "from_id": "user375322108",
+   "text": "кто на хакатон в субботу?",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "кто на хакатон в субботу?"
+    }
+   ]
+  },
+  {
+   "id": 18,
+   "type": "message",
+   "date": "2026-10-24T18:00:00",
+   "date_unixtime": "1792854000",
+   "from": "Вика Белкина",
+   "from_id": "user201223606",
+   "file": "(File not included. Change data exporting settings to download.)",
+   "media_type": "sticker",
+   "sticker_emoji": "😎",
+   "width": 512,
+   "height": 512,
+   "text": "",
+   "text_entities": []
+  },
+  {
+   "id": 19,
+   "type": "message",
+   "date": "2026-10-25T12:00:00",
+   "date_unixtime": "1792918800",
+   "from": "Олег Петров",
+   "from_id": "user120250599",
+   "text": "кто смотрел матч вчера?",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "кто смотрел матч вчера?"
+    }
+   ]
+  },
+  {
+   "id": 20,
+   "type": "message",
+   "date": "2026-10-25T21:00:00",
+   "date_unixtime": "1792951200",
+   "from": "Аня Соколова",
+   "from_id": "user466317201",
+   "text": "завтра опять в 8:30 вставать 😩",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "завтра опять в 8:30 вставать 😩"
+    }
+   ]
+  },
+  {
+   "id": 21,
+   "type": "message",
+   "date": "2026-10-26T09:30:00",
+   "date_unixtime": "1792996200",
+   "from": "Кирилл Лебедев",
+   "from_id": "user375322108",
+   "text": "физика — говно",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "физика — говно"
+    }
+   ]
+  },
+  {
+   "id": 22,
+   "type": "message",
+   "date": "2026-10-26T09:31:00",
+   "date_unixtime": "1792996260",
+   "from": "Денис Ким",
+   "from_id": "user958535212",
+   "text": "😂😂😂",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "😂😂😂"
+    }
+   ]
+  },
+  {
+   "id": 23,
+   "type": "message",
+   "date": "2026-10-26T13:00:00",
+   "date_unixtime": "1793008800",
+   "from": "Саша Миронов",
+   "from_id": "user453285483",
+   "text": "кто с нами в бильярд после пар",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "кто с нами в бильярд после пар"
+    }
+   ]
+  },
+  {
+   "id": 24,
+   "type": "message",
+   "date": "2026-10-27T09:20:00",
+   "date_unixtime": "1793082000",
+   "from": "Аня Соколова",
+   "from_id": "user466317201",
+   "text": "напоминалка: лаба 3 по базам данных до 5 ноября, кто ещё не начал — пора",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "напоминалка: лаба 3 по базам данных до 5 ноября, кто ещё не начал — пора"
+    }
+   ]
+  },
+  {
+   "id": 25,
+   "type": "message",
+   "date": "2026-10-27T09:25:00",
+   "date_unixtime": "1793082300",
+   "from": "Олег Петров",
+   "from_id": "user120250599",
+   "text": "спасибо что напомнила",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "спасибо что напомнила"
+    }
+   ]
+  },
+  {
+   "id": 26,
+   "type": "message",
+   "date": "2026-10-27T20:00:00",
+   "date_unixtime": "1793120400",
+   "from": "Денис Ким",
+   "from_id": "user958535212",
+   "text": "линал это боль",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "линал это боль"
+    }
+   ]
+  },
+  {
+   "id": 27,
+   "type": "message",
+   "date": "2026-10-27T23:00:00",
+   "date_unixtime": "1793131200",
+   "from": "Лёша Новиков",
+   "from_id": "user492116284",
+   "text": "напоминаю всем, что сон для слабых",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "напоминаю всем, что сон для слабых"
+    }
+   ]
+  },
+  {
+   "id": 28,
+   "type": "message",
+   "date": "2026-10-28T08:10:00",
+   "date_unixtime": "1793164200",
+   "from": "Полина Зайцева",
+   "from_id": "user548927010",
+   "text": "автобус опять опоздал, буду к 9:00",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "автобус опять опоздал, буду к 9:00"
+    }
+   ]
+  },
+  {
+   "id": 29,
+   "type": "message",
+   "date": "2026-10-28T10:00:00",
+   "date_unixtime": "1793170800",
+   "from": "Денис Ким",
+   "from_id": "user958535212",
+   "text": "матан опять скучный, кто-нибудь понял что было?",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "матан опять скучный, кто-нибудь понял что было?"
+    }
+   ]
+  },
+  {
+   "id": 30,
+   "type": "message",
+   "date": "2026-10-28T16:00:00",
+   "date_unixtime": "1793192400",
+   "from": "Вика Белкина",
+   "from_id": "user201223606",
+   "text": "ахахаха смотрите что в чате потока творится",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "ахахаха смотрите что в чате потока творится"
+    }
+   ]
+  },
+  {
+   "id": 31,
+   "type": "message",
+   "date": "2026-10-28T22:00:00",
+   "date_unixtime": "1793214000",
+   "from": "Лёша Новиков",
+   "from_id": "user492116284",
+   "text": "кто-нибудь сделал ДЗ по вебу? скиньте посмотреть",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "кто-нибудь сделал ДЗ по вебу? скиньте посмотреть"
+    }
+   ]
+  },
+  {
+   "id": 32,
+   "type": "message",
+   "date": "2026-10-29T08:00:00",
+   "date_unixtime": "1793250000",
+   "from": "Кирилл Лебедев",
+   "from_id": "user375322108",
+   "text": "кто на физру?",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "кто на физру?"
+    }
+   ]
+  },
+  {
+   "id": 33,
+   "type": "message",
+   "date": "2026-10-29T12:00:00",
+   "date_unixtime": "1793264400",
+   "from": "Саша Миронов",
+   "from_id": "user453285483",
+   "text": "Петруша vs Los Pollos Hermanos — ставки принимаются",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Петруша vs Los Pollos Hermanos — ставки принимаются"
+    }
+   ]
+  },
+  {
+   "id": 34,
+   "type": "message",
+   "date": "2026-10-29T18:00:00",
+   "date_unixtime": "1793286000",
+   "from": "Полина Зайцева",
+   "from_id": "user548927010",
+   "text": "кстати, Белова отменила консультацию 5-го, мне староста сказала",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "кстати, Белова отменила консультацию 5-го, мне староста сказала"
+    }
+   ]
+  },
+  {
+   "id": 35,
+   "type": "message",
+   "date": "2026-10-29T18:05:00",
+   "date_unixtime": "1793286300",
+   "from": "Аня Соколова",
+   "from_id": "user466317201",
+   "text": "жаль",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "жаль"
+    }
+   ]
+  },
+  {
+   "id": 36,
+   "type": "message",
+   "date": "2026-10-30T07:50:00",
+   "date_unixtime": "1793335800",
+   "from": "Олег Петров",
+   "from_id": "user120250599",
+   "text": "всем удачи на чемпионате!",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "всем удачи на чемпионате!"
+    }
+   ]
+  },
+  {
+   "id": 37,
+   "type": "message",
+   "date": "2026-10-30T08:30:00",
+   "date_unixtime": "1793338200",
+   "from": "Кирилл Лебедев",
+   "from_id": "user375322108",
+   "text": "Los Pollos Hermanos — лучшая команда, без вариантов",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "Los Pollos Hermanos — лучшая команда, без вариантов"
+    }
+   ]
+  },
+  {
+   "id": 38,
+   "type": "message",
+   "date": "2026-10-30T10:00:00",
+   "date_unixtime": "1793343600",
+   "from": "Денис Ким",
+   "from_id": "user958535212",
+   "text": "го в столовку",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "го в столовку"
+    }
+   ]
+  },
+  {
+   "id": 39,
+   "type": "message",
+   "date": "2026-10-30T12:00:00",
+   "date_unixtime": "1793350800",
+   "from": "Саша Миронов",
+   "from_id": "user453285483",
+   "text": "после чемпионата идём отмечать?",
+   "text_entities": [
+    {
+     "type": "plain",
+     "text": "после чемпионата идём отмечать?"
+    }
+   ]
+  }
+ ]
+}
