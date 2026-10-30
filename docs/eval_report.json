@@ -1,0 +1,211 @@
+{
+ "model": "ollama:qwen3:8b",
+ "embedder": "ollama-bge-m3",
+ "hardware": "Linux 6.6.87.2-microsoft-standard-WSL2 · 13th Gen Intel(R) Core(TM) i7-13620H · 12 ГБ RAM · NVIDIA GeForce RTX 4060 Laptop GPU, 8188 MiB",
+ "date": "30.10.2026 18:34",
+ "act_mode": "llm",
+ "act_sample": 10,
+ "n_posts": 80,
+ "metrics": {
+  "precision": 0.622,
+  "recall": 1.0,
+  "f1": 0.767,
+  "accuracy": 0.825,
+  "subject_acc": 0.957,
+  "category_acc": 0.87,
+  "date_acc": 1.0,
+  "tp": 23,
+  "fp": 14,
+  "fn": 0,
+  "tn": 43,
+  "n_important": 23,
+  "n_dated": 9,
+  "mcp_no_fallback": 1.0,
+  "mcp_llm_acts": 10,
+  "mcp_call_ok": 0.941,
+  "mcp_llm_calls": 17,
+  "latency_avg_s": 5.51,
+  "latency_all_avg_s": 4.32,
+  "prefilter_dropped": 18,
+  "prefilter_lost_important": 0,
+  "wall_s": 348,
+  "deadlines_total": 8,
+  "deadlines_multi_source": 4
+ },
+ "baseline": {
+  "precision": 0.625,
+  "recall": 0.87,
+  "f1": 0.727,
+  "accuracy": 0.812,
+  "subject_acc": 0.435,
+  "category_acc": 0.739,
+  "date_acc": 0.889,
+  "tp": 20,
+  "fp": 12,
+  "fn": 3,
+  "tn": 45,
+  "n_important": 23,
+  "n_dated": 9
+ },
+ "tags": [
+  {
+   "tag": "answer",
+   "n": 5,
+   "llm": 5,
+   "baseline": 1
+  },
+  {
+   "tag": "burst",
+   "n": 2,
+   "llm": 2,
+   "baseline": 0
+  },
+  {
+   "tag": "dedup",
+   "n": 1,
+   "llm": 1,
+   "baseline": 1
+  },
+  {
+   "tag": "fizra",
+   "n": 1,
+   "llm": 1,
+   "baseline": 0
+  },
+  {
+   "tag": "meme",
+   "n": 1,
+   "llm": 1,
+   "baseline": 0
+  },
+  {
+   "tag": "sarcasm",
+   "n": 1,
+   "llm": 1,
+   "baseline": 0
+  },
+  {
+   "tag": "subject_noise",
+   "n": 2,
+   "llm": 2,
+   "baseline": 0
+  },
+  {
+   "tag": "team",
+   "n": 3,
+   "llm": 3,
+   "baseline": 2
+  }
+ ],
+ "errors": [
+  {
+   "text": "а где расписание то",
+   "gold": "noise/None/None",
+   "pred": "announcement/None/None",
+   "why": "Староста напомнила о расписании, которое было ранее опубликовано"
+  },
+  {
+   "text": "в закрепе 👆",
+   "gold": "noise/None/None",
+   "pred": "announcement/None/None",
+   "why": "Староста информирует о закреплении расписания на семестр"
+  },
+  {
+   "text": "Смирнова: ЛР1 по моделям данных защищаем до 23 октября, отчёт распечатать",
+   "gold": "deadline/data_models/2026-10-23",
+   "pred": "event/data_models/2026-10-23",
+   "why": "Староста сообщила о дате защиты ЛР1 по моделям данных"
+  },
+  {
+   "text": "кто-нибудь знает, когда стипендия?",
+   "gold": "noise/None/None",
+   "pred": "announcement/None/None",
+   "why": "Вопрос о стипендии — важное объявление без срока"
+  },
+  {
+   "text": "а ДЗ по терверу тогда когда сдавать?",
+   "gold": "noise/None/None",
+   "pred": "announcement/probability/None",
+   "why": "Вопрос о сроке сдачи ДЗ по ТВиМС, предмет определён по контексту"
+  },
+  {
+   "text": "кто сделал предварительный расчёт к ЛР1?",
+   "gold": "noise/None/None",
+   "pred": "announcement/electro/None",
+   "why": "Вопрос о выполнении задания, связанного с ЛР1, в чате по электротехнике"
+  },
+  {
+   "text": "у нас чат-бот для расписания",
+   "gold": "noise/None/None",
+   "pred": "announcement/asoiu/None",
+   "why": "Сообщение о чат-боте для расписания — важное объявление без срока."
+  },
+  {
+   "text": "Напоминаю: в пятницу 23.10 в 12:00 собрание группы по поводу практики, ауд. 395",
+   "gold": "event/None/2026-10-23",
+   "pred": "event/data_models/2026-10-23",
+   "why": "Собрание по практике — событие с датой и местом"
+  },
+  {
+   "text": "А в ДЗ №2 задачу 2.7 нужно с рисунком?",
+   "gold": "noise/None/None",
+   "pred": "announcement/physics/None",
+   "why": "Вопрос студента о формате задания, относится к известному дедлайну ДЗ №2"
+  },
+  {
+   "text": "а что за победу дают?",
+   "gold": "noise/None/None",
+   "pred": "announcement/asoiu/None",
+   "why": "Вопрос о условиях события, не относится к конкретному дедлайну"
+  },
+  {
+   "text": "а теория где?",
+   "gold": "noise/None/None",
+   "pred": "announcement/physics/None",
+   "why": "Уточнение условий допуска к лабораторным, связанное с теорией"
+  },
+  {
+   "text": "а варианты где?",
+   "gold": "noise/None/None",
+   "pred": "announcement/electro/None",
+   "why": "Вопрос о вариантах задания, связанном с ЛР2 по электротехнике"
+  },
+  {
+   "text": "а отчёт по шаблону?",
+   "gold": "noise/None/None",
+   "pred": "deadline_update/electro/2026-10-27",
+   "why": "Ответ на вопрос о наличии отчёта по ЛР1, уточнение требований к сдаче"
+  },
+  {
+   "text": "Шаблон отчёта по элтеху в папке группы: https://disk.example.ru/iu5-31b/elteh",
+   "gold": "announcement/electro/None",
+   "pred": "materials/electro/None",
+   "why": "Файл с шаблоном отчёта по электротехнике, выложенный старостой в чате"
+  },
+  {
+   "text": "Кейс-чемпионат пройдёт 30 октября (пятница) с 15:55 до 20:45. Номера аудиторий будут уточн",
+   "gold": "event/asoiu/2026-10-30",
+   "pred": "deadline_update/asoiu/2026-10-30",
+   "why": "Уточнение времени и даты известного события («номера аудиторий будут уточняться»)"
+  },
+  {
+   "text": "кто знает где 501ю?",
+   "gold": "noise/None/None",
+   "pred": "announcement/None/None",
+   "why": "Вопрос о местоположении аудитории без указания предмета"
+  },
+  {
+   "text": "в учебно-лабораторном корпусе, 5 этаж",
+   "gold": "noise/None/None",
+   "pred": "materials/asoiu/None",
+   "why": "Уточнение места для события кейс-чемпионата"
+  },
+  {
+   "text": "кто-нибудь скиньте конспект по алгосам",
+   "gold": "noise/None/None",
+   "pred": "announcement/algorithms/None",
+   "why": "Просьба о конспекте — учебная информация, связанная с предметом"
+  }
+ ],
+ "fake": false
+}
