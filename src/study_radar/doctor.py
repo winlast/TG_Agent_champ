@@ -166,12 +166,13 @@ async def run_doctor(s: Settings, console: Console, deep: bool = False) -> bool:
 
 
 async def _check_telegram(s: Settings, add) -> None:
-    from aiogram import Bot
+    from study_radar.telegram.hub import make_bot
 
-    bot = Bot(s.telegram.token)
+    bot = make_bot(s)
+    via = f" (через прокси {s.telegram.proxy})" if s.telegram.proxy else ""
     try:
         me = await bot.get_me()
-        add(True, f"Бот @{me.username} отвечает")
+        add(True, f"Бот @{me.username} отвечает{via}")
         privacy_ok = bool(me.can_read_all_group_messages)
         add(privacy_ok if privacy_ok else None, "Privacy mode выключен" if privacy_ok else "Privacy mode ВКЛЮЧЁН",
             "" if privacy_ok else "@BotFather → /setprivacy → бот → Disable; затем удалите бота из чатов и добавьте снова "
@@ -205,6 +206,7 @@ async def _check_telegram(s: Settings, add) -> None:
             except Exception as e:
                 add(False, f"Источник {cid}: {e}", "Добавьте бота в этот чат")
     except Exception as e:
-        add(False, f"Telegram: {e}", "Проверьте токен и доступ к api.telegram.org (VPN/прокси)")
+        add(False, f"Telegram{via}: {e}", "Проверьте токен и доступ к api.telegram.org: включите VPN или укажите "
+                                         "прокси в .env, например TELEGRAM_PROXY=http://127.0.0.1:7897")
     finally:
         await bot.session.close()

@@ -112,6 +112,7 @@ class TelegramCfg(BaseModel):
     token: str = ""
     hub_chat_id: int | None = None
     source_chat_ids: list[int] = Field(default_factory=list)
+    proxy: str = ""     # http://host:port или socks5://host:port — если api.telegram.org доступен только через прокси
 
 
 class Settings(BaseModel):
@@ -217,6 +218,9 @@ def load_settings(
         hub = env.get("HUB_CHAT_ID", "").strip()
         s.telegram.hub_chat_id = int(hub) if hub.lstrip("-").isdigit() else None
         s.telegram.source_chat_ids = _parse_ids(env.get("SOURCE_CHAT_IDS"))
+        # прокси для Telegram: явный TELEGRAM_PROXY, иначе системный https_proxy/all_proxy (VPN-клиенты в WSL)
+        s.telegram.proxy = next((env[k].strip() for k in ("TELEGRAM_PROXY", "https_proxy", "HTTPS_PROXY",
+                                                          "all_proxy", "ALL_PROXY") if env.get(k, "").strip()), "")
     return s
 
 

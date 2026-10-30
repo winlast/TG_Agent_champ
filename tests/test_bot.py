@@ -103,3 +103,42 @@ async def test_bothub_topics_forward_fallback_and_board(settings, services):
     await refresh_board(hub, services.db, settings)              # без изменений — без лишних правок
     pins = [c for c in bot.calls if c[0] == "pin_chat_message"]
     assert len(pins) == 1
+
+
+async def test_bot_uses_proxy_from_settings(settings):
+    """Если api.telegram.org доступен только через VPN-прокси, бот должен идти через него (CONNECT)."""
+    from study_radar.telegram.hub import make_bot
+
+    seen: list[str] = []
+
+    async def handle(reader, writer):
+        seen.append((await reader.readline()).decode().strip())
+        writer.write(b"HTTP/1.1 502 Bad Gateway\r\nContent-Length: 0\r\n\r\n")
+        await writer.drain()
+        writer.close()
+
+    server = await asyncio.start_server(handle, "127.0.0.1", 0)
+    port = server.sockets[0].getsockname()[1]
+    settings.telegram.token = "123456:TEST"
+    settings.telegram.proxy = f"http://127.0.0.1:{port}"
+    bot = make_bot(settings)
+    try:
+        try:
+            await bot.get_me()
+        except Exception:
+            pass
+    finally:
+        await bot.session.close()
+        server.close()
+    assert seen and seen[0].startswith("CONNECT api.telegram.org:443")
+
+
+def test_proxy_taken_from_env(monkeypatch, tmp_path):
+    from study_radar.config import load_settings
+
+    monkeypatch.delenv("TELEGRAM_PROXY", raising=False)
+    monkeypatch.setenv("https_proxy", "http://127.0.0.1:7897")
+    s = load_settings(env_file=tmp_path / "none.env")
+    assert s.telegram.proxy == "http://127.0.0.1:7897"
+    monkeypatch.setenv("TELEGRAM_PROXY", "socks5://127.0.0.1:7898")
+    assert load_settings(env_file=tmp_path / "none.env").telegram.proxy == "socks5://127.0.0.1:7898"

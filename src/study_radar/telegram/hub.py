@@ -30,6 +30,19 @@ def topic_specs(settings: Settings) -> list[tuple[str, str]]:
     return specs
 
 
+def make_bot(settings: Settings):
+    """aiogram.Bot с parse_mode=HTML; через прокси, если он задан (TELEGRAM_PROXY или https_proxy)."""
+    from aiogram import Bot
+    from aiogram.client.default import DefaultBotProperties
+
+    session = None
+    if settings.telegram.proxy:
+        from aiogram.client.session.aiohttp import AiohttpSession
+
+        session = AiohttpSession(proxy=settings.telegram.proxy)
+    return Bot(settings.telegram.token, session=session, default=DefaultBotProperties(parse_mode="HTML"))
+
+
 def quote_html(row: dict[str, Any], max_len: int = 1500) -> str:
     """Текстовая «пересылка» (если forward/copy невозможны): автор, чат, дата, текст, ссылка."""
     text = html.escape((row.get("text") or "")[:max_len])
@@ -111,12 +124,9 @@ class BotHub(TelegramHub):
 
     def __init__(self, settings: Settings, db: Database, chat_id: int, bot: Any = None):
         super().__init__(settings, db)
-        from aiogram import Bot
-        from aiogram.client.default import DefaultBotProperties
-
         self.chat_id = chat_id
         self._own_bot = bot is None
-        self.bot = bot or Bot(settings.telegram.token, default=DefaultBotProperties(parse_mode="HTML"))
+        self.bot = bot or make_bot(settings)
 
     async def close(self) -> None:
         if self._own_bot:

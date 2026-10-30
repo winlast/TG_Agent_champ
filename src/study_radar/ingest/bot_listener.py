@@ -130,8 +130,7 @@ class LiveBuffer:
 
 
 async def run_bot(settings: Settings) -> None:
-    from aiogram import Bot, Dispatcher, F, Router
-    from aiogram.client.default import DefaultBotProperties
+    from aiogram import Dispatcher, F, Router
     from aiogram.filters import Command, CommandObject
     from aiogram.types import Message
 
@@ -140,7 +139,11 @@ async def run_bot(settings: Settings) -> None:
     from study_radar.services import Services
     from study_radar.simulate import post_from_db
 
-    bot = Bot(settings.telegram.token, default=DefaultBotProperties(parse_mode="HTML"))
+    from study_radar.telegram.hub import make_bot
+
+    bot = make_bot(settings)
+    if settings.telegram.proxy:
+        log.info("Telegram через прокси %s", settings.telegram.proxy)
     me = await bot.get_me()
     sv = Services(settings, "bot", bot=bot)
     db = sv.db

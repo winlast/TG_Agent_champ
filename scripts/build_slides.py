@@ -178,6 +178,31 @@ def table(slide, x, y, w, rows, col_w, header_fill=C_INDEX, size=13, row_h=0.42)
     return tbl
 
 
+def callouts(slide, x, y, w, items, size=14, step=0.95):
+    """Нумерованные пояснения к скриншоту: кружок с цифрой + заголовок + текст."""
+    for i, (title, body) in enumerate(items):
+        yy = y + Inches(step * i)
+        c = slide.shapes.add_shape(MSO_SHAPE.OVAL, x, yy + Inches(0.02), Inches(0.38), Inches(0.38))
+        c.fill.solid()
+        c.fill.fore_color.rgb = ACCENT
+        c.line.fill.background()
+        c.shadow.inherit = False
+        tf = c.text_frame
+        tf.margin_left = tf.margin_right = tf.margin_top = tf.margin_bottom = 0
+        tf.vertical_anchor = MSO_ANCHOR.MIDDLE
+        r = tf.paragraphs[0].add_run()
+        tf.paragraphs[0].alignment = PP_ALIGN.CENTER
+        r.text = str(i + 1)
+        r.font.name, r.font.size, r.font.bold, r.font.color.rgb = FONT, Pt(13), True, WHITE
+        text_box(slide, x + Inches(0.5), yy - Inches(0.04), w - Inches(0.5), Inches(step),
+                 [(title, {"size": size, "bold": True, "spacing": 1}), (body, {"size": size - 2, "color": MUTED})],
+                 spacing=2)
+
+
+def caption(slide, x, y, w, text, size=12):
+    text_box(slide, x, y, w, Inches(0.4), text, size=size, color=MUTED, align=PP_ALIGN.CENTER)
+
+
 def notes(slide, text: str) -> None:
     slide.notes_slide.notes_text_frame.text = text
 
@@ -355,11 +380,14 @@ def build() -> tuple[Presentation, list[str]]:
             ["Telegram не умеет пересортировать сообщения", "одно закреплённое сообщение-доска, editMessageText"],
             ["Один дедлайн пишут в двух чатах", "дедупликация: предмет + похожесть названия + дата + решение LLM"],
             ["Бот не видит сообщения в группах", "privacy mode → Disable в @BotFather, проверка в make doctor"],
-            ["Ноутбук без GPU: qwen3:8b на CPU слишком медленный", "qwen3:4b для CPU; модели выгружаются через 5 мин; лимит RAM для WSL"]]
-    table(s, Inches(0.6), Inches(1.5), Inches(12.1), diff, [5.6, 6.5], size=13, row_h=0.52)
+            ["Ollama в WSL не видела видеокарту и считала на CPU (минуты на сообщение)",
+             "обновили драйвер NVIDIA (536 → 621): qwen3:8b на 100% GPU, ~5 с на сообщение"],
+            ["api.telegram.org из WSL доступен только через VPN", "прокси для бота: TELEGRAM_PROXY в .env (aiogram + aiohttp-socks)"],
+            ["WSL и VS Code отключались под нагрузкой", "лимит памяти WSL, модели выгружаются через 5 мин простоя"]]
+    table(s, Inches(0.6), Inches(1.45), Inches(12.1), diff, [5.6, 6.5], size=12, row_h=0.45)
     md += ["| Трудность | Решение |", "|---|---|"] + [f"| {a} | {b} |" for a, b in diff[1:]] + [""]
-    notes(s, "Это реальные проблемы из devlog. После прогона на ноутбуке добавить 1–2 примера ошибок модели из "
-             "docs/eval_report.md (раздел «Ошибки модели»).")
+    notes(s, "Это реальные проблемы из журнала разработки: часть — про логику агента, часть — про запуск на ноутбуке "
+             "(видеокарта в WSL, доступ к Telegram через VPN).")
 
     # 10–14. Экранные формы
     screens = [
@@ -405,18 +433,62 @@ def build() -> tuple[Presentation, list[str]]:
             text_box(s, Inches(0.6), Inches(6.68), Inches(12.1), Inches(0.35), "⚠ " + mode_note, size=10,
                      color=RGBColor(0x8A, 0x5A, 0x00))
         md += [f"![{title}](screenshots/{fname})", f"Кадр: `docs/screenshots/{fname}` — {hint}.", ""]
-    tg = [p for p in (shot("tg_hub.png"), shot("tg_board.png"), shot("tg_ask.png")) if p]
-    if tg:
-        s = new("Работа в настоящем Telegram", "Режим бота: темы хаба, закреп-доска, /ask")
-        w = Inches(12.1 / len(tg) - 0.15)
-        for i, p in enumerate(tg):
-            picture_fit(s, p, Inches(0.6) + i * (w + Inches(0.15)), Inches(1.55), w, Inches(5.4), "")
-        md += [f"![Telegram]({'screenshots/' + p.name})" for p in tg] + [""]
+    tg = {k: shot(f"tg_{k}.png") for k in ("1_elteh", "2_flood", "3_subject", "4_board", "5_ask")}
+    if all(tg.values()):
+        md += ["## Работа в настоящем Telegram", "", "Кадры сняты в Telegram Desktop во время работы `make bot` "
+               "(qwen3:8b через Ollama на ноутбуке команды).", ""]
+
+        s = new("Telegram: учебные чаты-источники", "Бот добавлен в группы и читает их как участник — "
+                "новые и отредактированные сообщения")
+        picture_fit(s, tg["1_elteh"], Inches(0.6), Inches(1.55), Inches(5.3), Inches(4.95), "")
+        caption(s, Inches(0.6), Inches(6.55), Inches(5.3), "Чат «Тест: Элтех лабы»")
+        picture_fit(s, tg["2_flood"], Inches(6.4), Inches(1.55), Inches(6.3), Inches(2.9), "")
+        caption(s, Inches(6.4), Inches(4.5), Inches(6.3), "Чат «Тест: Флудилка»")
+        callouts(s, Inches(6.5), Inches(5.0), Inches(6.2), [
+            ("Важное вперемешку с болтовнёй", "защита ЛР2, перенос ответом, «По ЛР3: 1) 2)», уточнение, отмена"),
+            ("Шум и напоминание из другого чата", "«физика — это боль», «кто на физру?» и та же ЛР3 во «Флудилке»"),
+        ], size=14, step=0.8)
+        notes(s, "Это настоящие группы в Telegram. Сообщения пишем сами, бот StudyRadar добавлен в обе группы. "
+                 "Слева — учебный чат, справа — флудилка.")
+        md += ["### Учебные чаты-источники", "", "![Элтех лабы](screenshots/tg_1_elteh.png)",
+               "![Флудилка](screenshots/tg_2_flood.png)", ""]
+
+        s = new("Telegram: тема предмета в чате-хабе", "Хаб — супергруппа с темами; темы предметов и служебные "
+                "темы бот создал сам по команде /sethub")
+        picture_fit(s, tg["3_subject"], Inches(0.6), Inches(1.55), Inches(7.6), Inches(5.0), "")
+        caption(s, Inches(0.6), Inches(6.58), Inches(7.6), "Хаб → тема «⚡ Электротехника»")
+        callouts(s, Inches(8.55), Inches(1.65), Inches(4.25), [
+            ("Темы созданы ботом", "предметы, 📅 Дедлайны, 🤔 На проверку, 🧾 Журнал агента"),
+            ("Важное — в тему предмета", "сообщения пересланы из чата-источника с автором"),
+            ("Объявление закреплено", "сверху темы — сообщение о защите ЛР2"),
+            ("Пометка агента", "категория · предмет · название · срок"),
+            ("Изменение срока", "ответ «⚠️ Перенос: было → стало» с уверенностью модели и ссылкой на источник"),
+        ], size=14, step=1.0)
+        notes(s, "Агент сам решил, что эти сообщения важные и относятся к электротехнике, и переслал их в нужную тему. "
+                 "Под пересланными сообщениями — его пометка, а при изменении срока — отдельный ответ «Перенос».")
+        md += ["### Тема предмета в хабе", "", "![Тема предмета](screenshots/tg_3_subject.png)", ""]
+
+        s = new("Telegram: доска дедлайнов и вопросы по переписке", "Закреплённая доска в теме «📅 Дедлайны» "
+                "и команды /ask, /deadlines в хабе")
+        picture_fit(s, tg["4_board"], Inches(0.6), Inches(1.55), Inches(6.4), Inches(2.9), "")
+        caption(s, Inches(0.6), Inches(4.5), Inches(6.4), "Хаб → тема «📅 Дедлайны» (закреплённое сообщение)")
+        callouts(s, Inches(0.7), Inches(5.0), Inches(6.3), [
+            ("Одна доска вместо ленты", "бот редактирует закреп при каждом изменении; сортировка по сроку, ↗ — источники"),
+            ("/ask — Модуль 2 (RAG)", "ответ по переписке со ссылками [1], [2] на сообщения и дедлайны из базы"),
+        ], size=14, step=0.8)
+        picture_fit(s, tg["5_ask"], Inches(7.4), Inches(1.55), Inches(5.3), Inches(5.0), "")
+        caption(s, Inches(7.4), Inches(6.58), Inches(5.3), "Хаб → General: /ask и /deadlines")
+        notes(s, "Telegram не умеет пересортировывать сообщения, поэтому доска — одно закреплённое сообщение, которое "
+                 "бот редактирует. Справа — вопрос по переписке: ответ со ссылками на исходные сообщения.")
+        md += ["### Доска дедлайнов и /ask", "", "![Доска](screenshots/tg_4_board.png)",
+               "![/ask](screenshots/tg_5_ask.png)", ""]
 
     # Результаты
-    s = new("Результаты", "195 размеченных постов из 5 синтетических чатов (data/eval/labeled.jsonl)")
-    b = baseline_only()
     m = (metrics or {}).get("metrics")
+    b = (metrics or {}).get("baseline") or baseline_only()
+    n_posts = (metrics or {}).get("n_posts") or 195
+    s = new("Результаты", f"{n_posts} размеченных постов (data/eval/labeled.jsonl) · бейзлайн — ключевые слова "
+                          "на тех же постах")
     fmt = (lambda v: f"{v:.2f}") if m else (lambda v: "—")
     rows = [["Метрика", "StudyRadar (LLM)", "Ключевые слова"],
             ["F1 важности", fmt(m["f1"]) if m else "—", f"{b['f1']:.2f}"],
@@ -440,6 +512,18 @@ def build() -> tuple[Presentation, list[str]]:
                 ("Видно, почему ключевые слова не работают: низкая точность предмета и много ложных «важных».",
                  {"size": 14})]
     text_box(s, Inches(8.3), Inches(1.7), Inches(4.5), Inches(5.0), side, spacing=10)
+    tags = (metrics or {}).get("tags") or []
+    if tags:
+        from study_radar.eval import TAG_RU
+
+        hard = [["Сложные случаи (верно)"] + [TAG_RU.get(t["tag"], t["tag"]) for t in tags],
+                ["StudyRadar"] + [f"{t['llm']} из {t['n']}" for t in tags],
+                ["Ключевые слова"] + [f"{t['baseline']} из {t['n']}" for t in tags]]
+        first = 2.1
+        rest = (12.1 - first) / len(tags)
+        table(s, Inches(0.6), Inches(5.35), Inches(12.1), hard, [first] + [rest] * len(tags), size=11, row_h=0.42)
+        md += ["| " + " | ".join(r) + " |" for r in hard[:1]] + ["|" + "---|" * len(hard[0])] + \
+              ["| " + " | ".join(r) + " |" for r in hard[1:]] + [""]
     md += ["| " + " | ".join(r) + " |" for r in rows[:1]] + ["|---|---|---|"] + ["| " + " | ".join(r) + " |"
                                                                              for r in rows[1:]] + [""]
     if m:
@@ -461,6 +545,7 @@ def build() -> tuple[Presentation, list[str]]:
         ("make ui            # http://localhost:8501", {"size": 15, "font": "Consolas"}),
         ("make bot           # режим Telegram-бота", {"size": 15, "font": "Consolas"}),
         ("8 ГБ RAM: LLM_MODEL=qwen3:4b в .env", {"size": 14, "color": MUTED}),
+        ("Telegram через VPN: TELEGRAM_PROXY=http://127.0.0.1:<порт> в .env", {"size": 14, "color": MUTED}),
     ])
     box(s, Inches(8.0), Inches(2.0), Inches(4.7), Inches(2.6), C_INDEX)
     text_box(s, Inches(8.2), Inches(2.2), Inches(4.3), Inches(2.3), [
