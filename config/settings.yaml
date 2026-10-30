@@ -1,0 +1,63 @@
+# Настройки StudyRadar. Секреты — в .env (см. .env.example).
+# Переменные окружения из .env перекрывают значения отсюда
+# (LLM_MODEL, EMBED_MODEL, OLLAMA_HOST, TIMEZONE, TELEGRAM_BOT_TOKEN, HUB_CHAT_ID, SOURCE_CHAT_IDS).
+
+timezone: Europe/Moscow
+log_level: INFO
+
+paths:
+  db: data/runtime/study_radar.sqlite
+  chroma: data/runtime/chroma
+
+llm:
+  backend: ollama           # ollama | fake (fake — детерминированные правила, ТОЛЬКО для тестов)
+  host: http://localhost:11434
+  model: qwen3:8b           # 8 ГБ RAM -> qwen3:4b (или LLM_MODEL=qwen3:4b в .env)
+  temperature: 0
+  think: false              # thinking-режим Qwen3 выключен ради скорости
+  num_ctx: 8192
+  timeout_s: 900
+  keep_alive: 30m
+
+embeddings:
+  backend: ollama           # ollama | hash (hash — только для тестов)
+  model: bge-m3
+
+bursts:
+  gap_minutes: 5            # склейка «очередей» одного автора (офлайн/экспорт/симуляция)
+  live_debounce_seconds: 45 # в режиме бота: ждём паузу перед обработкой очереди
+
+prefilter:
+  threshold: 0.42           # косинусная близость к прототипам (bge-m3); щедрый порог
+  min_words: 3
+
+context:
+  prev_messages: 5
+  prev_window_minutes: 30
+  similar_k: 3
+  deadlines_k: 5
+
+classify:
+  review_confidence: 0.5    # важное, но уверенность ниже -> «🤔 На проверку»
+  max_days_past: 30         # окно допустимых дат относительно даты сообщения
+  max_days_future: 240
+
+agent:
+  act_mode: llm             # llm — LLM сама вызывает MCP-инструменты; deterministic — только исполнитель
+  max_attempts: 2           # после 2 неудачных попыток — детерминированный фолбэк
+  max_steps: 4
+
+dedup:
+  title_similarity: 0.82
+  date_tolerance_hours: 36
+
+retrieval:
+  k: 6
+  rrf_k: 60
+
+hub:
+  journal: true             # топик «🧾 Журнал агента»
+  past_mode: collapse       # hide | collapse — что делать с прошедшими дедлайнами на доске
+
+# Подстроки имён преподавателей/старост — повышают приоритет (не отменяют проверку смысла).
+# Можно дополнять в config/subjects.yaml -> trusted_authors.

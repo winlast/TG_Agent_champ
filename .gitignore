@@ -1,0 +1,32 @@
+# секреты
+.env
+*.session
+*.session-journal
+
+# реальные экспорты чатов — НЕ коммитить
+data/private/*
+!data/private/.gitkeep
+
+# рабочие данные агента: БД, индексы, логи
+data/runtime/*
+!data/runtime/.gitkeep
+chroma/
+*.sqlite
+*.sqlite3
+*.db
+
+# python
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+build/
+dist/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
